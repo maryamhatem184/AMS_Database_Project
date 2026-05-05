@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBapplication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,9 +48,10 @@ namespace AMS_Database_Project
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Coach Coach = new Coach();
-            Coach.Show();
-            this.Hide();
+            //Controller controller = new Controller();
+            //Coach Coach = new Coach(controller.GetCoachID(textBox1.Text));
+            //Coach.Show();
+            //this.Hide();
         }
 
         private void button6_Click(object sender, EventArgs e)

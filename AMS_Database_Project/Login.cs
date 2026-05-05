@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBapplication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -97,7 +98,8 @@ namespace AMS_Database_Project
                             }
                             else if (role == "Coach")
                             {
-                                Coach coachForm = new Coach();
+                                Controller controller = new Controller();
+                                Coach coachForm = new Coach(controller.GetCoachID(textBox1.Text));
                                 coachForm.Show();
                             }
                             else if (role == "Fan")

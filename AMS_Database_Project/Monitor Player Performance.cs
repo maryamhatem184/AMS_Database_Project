@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBapplication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace AMS_Database_Project
 {
     public partial class Monitor_Player_Performance : Form
     {
-        public Monitor_Player_Performance()
+        public Monitor_Player_Performance(int ID)
         {
             InitializeComponent();
+            Controller controller = new Controller();
+            dataGridView1.DataSource = controller.ShowAllPlayersPerformances(ID);
+
         }
 
         private void button1_Click(object sender, EventArgs e)

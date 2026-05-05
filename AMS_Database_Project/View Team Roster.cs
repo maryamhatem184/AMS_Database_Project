@@ -14,11 +14,11 @@ namespace AMS_Database_Project
 {
     public partial class View_Team_Roster : Form
     {
-        public View_Team_Roster()
+        public View_Team_Roster(int ID)
         {
             InitializeComponent();
             Controller controller = new Controller();
-            dataGridView1.DataSource = controller.ShowAllPlayers();
+            dataGridView1.DataSource = controller.ShowAllPlayers(ID);
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBapplication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,21 +13,24 @@ namespace AMS_Database_Project
 {
     public partial class Coach : Form
     {
-        public Coach()
+        private int coachID;
+        public Coach(int ID)
         {
             InitializeComponent();
+            Controller controller = new Controller();
+            coachID = ID;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            View_Team_Roster View_Team_Roster = new View_Team_Roster();
+            View_Team_Roster View_Team_Roster = new View_Team_Roster(coachID);
             View_Team_Roster.Show();
         }
 
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Monitor_Player_Performance Monitor_Player_Performance = new Monitor_Player_Performance();
+            Monitor_Player_Performance Monitor_Player_Performance = new Monitor_Player_Performance(coachID);
             Monitor_Player_Performance.Show();
         }
 
