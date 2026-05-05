@@ -16,5 +16,11 @@ namespace AMS_Database_Project
         {
             InitializeComponent();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Show();
+        }
     }
 }

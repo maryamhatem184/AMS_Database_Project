@@ -21,5 +21,11 @@ namespace AMS_Database_Project
         {
 
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Show();
+        }
     }
 }
