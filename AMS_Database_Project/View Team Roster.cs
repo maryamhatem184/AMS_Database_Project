@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBapplication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AMS_Database_Project
 {
@@ -15,6 +17,8 @@ namespace AMS_Database_Project
         public View_Team_Roster()
         {
             InitializeComponent();
+            Controller controller = new Controller();
+            dataGridView1.DataSource = controller.ShowAllPlayers();
         }
 
         private void button1_Click(object sender, EventArgs e)

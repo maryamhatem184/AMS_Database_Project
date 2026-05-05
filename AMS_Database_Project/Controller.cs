@@ -20,6 +20,11 @@ namespace DBapplication
         {
             dbMan.CloseConnection();
         }
-        
+        public DataTable ShowAllPlayers()
+        {
+            string query = "SELECT player_name, player_position, player_team FROM Players";
+            return dbMan.ExecuteReader(query);
+        }
+
     }
 }
