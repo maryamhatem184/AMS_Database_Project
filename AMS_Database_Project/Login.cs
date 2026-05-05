@@ -71,6 +71,12 @@ namespace AMS_Database_Project
                         cmd.Parameters.AddWithValue("@user", user);
                         cmd.Parameters.AddWithValue("@pass", pass);
 
+                        if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
+                        {
+                            MessageBox.Show("Please enter both a username and a password.");
+                            return;
+                        }
+
                         object result = cmd.ExecuteScalar();
 
                         if (result != null)
@@ -89,16 +95,16 @@ namespace AMS_Database_Project
                                 Medical medForm = new Medical();
                                 medForm.Show();
                             }
-                            //else if (role == "Coach")
-                            //{
-                            //    Coach coachForm = new Coach();
-                            //    coachForm.Show();
-                            //}
-                            //else if (role == "Fan")
-                            //{
-                            //    Fan fanForm = new Fan();
-                            //    fanForm.Show();
-                            //}
+                            else if (role == "Coach")
+                            {
+                                Coach coachForm = new Coach();
+                                coachForm.Show();
+                            }
+                            else if (role == "Fan")
+                            {
+                                Fan fanForm = new Fan();
+                                fanForm.Show();
+                            }
 
                             this.Hide();
                         }

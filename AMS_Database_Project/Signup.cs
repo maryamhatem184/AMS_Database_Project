@@ -34,6 +34,12 @@ namespace AMS_Database_Project
             string phone = textBox6.Text.Trim();
             string role = "Fan";
 
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(nationalID) || string.IsNullOrWhiteSpace(email))
+            {
+                MessageBox.Show("Please fill in all the required fields.");
+                return;
+            }
+
             string connString = @"Data Source=.;Initial Catalog=""Database project - AMS"";Integrated Security=True;";
 
             using (SqlConnection conn = new SqlConnection(connString))
