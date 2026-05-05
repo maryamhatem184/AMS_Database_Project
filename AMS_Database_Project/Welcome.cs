@@ -31,6 +31,33 @@ namespace AMS_Database_Project
             this.Hide();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Fan Fan = new Fan();
+            Fan.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Medical Medical = new Medical();
+            Medical.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Coach Coach = new Coach();
+            Coach.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Manager Manager = new Manager();
+            Manager.Show();
+            this.Hide();
+        }
     }
 }
 

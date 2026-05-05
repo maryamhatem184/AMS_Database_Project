@@ -46,8 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Check Player Availability.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Check Player Availability.Designer.cs">
+      <DependentUpon>Check Player Availability.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coach.Designer.cs">
+      <DependentUpon>Coach.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
+    <Compile Include="Fan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fan.Designer.cs">
+      <DependentUpon>Fan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +77,48 @@
     </Compile>
     <Compile Include="Medical.Designer.cs">
       <DependentUpon>Medical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor Player Performance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor Player Performance.Designer.cs">
+      <DependentUpon>Monitor Player Performance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule Match.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schedule Match.Designer.cs">
+      <DependentUpon>Schedule Match.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule Training Session.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schedule Training Session.Designer.cs">
+      <DependentUpon>Schedule Training Session.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Select Players For Match.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Select Players For Match.Designer.cs">
+      <DependentUpon>Select Players For Match.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update Player Performance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update Player Performance.Designer.cs">
+      <DependentUpon>Update Player Performance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Team Roster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View Team Roster.Designer.cs">
+      <DependentUpon>View Team Roster.cs</DependentUpon>
     </Compile>
     <Compile Include="Welcome.cs">
       <SubType>Form</SubType>
@@ -80,11 +140,26 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Coach.resx">
+      <DependentUpon>Coach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fan.resx">
+      <DependentUpon>Fan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Medical.resx">
       <DependentUpon>Medical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor Player Performance.resx">
+      <DependentUpon>Monitor Player Performance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View Team Roster.resx">
+      <DependentUpon>View Team Roster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
