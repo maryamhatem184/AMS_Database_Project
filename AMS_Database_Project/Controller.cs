@@ -36,7 +36,7 @@ namespace DBapplication
         }
         public DataTable ShowAllPlayersPerformances(int ID)
         {
-            string query = "SELECT p.Name, pp.Date, pp.Performance_Metric FROM Player_Performance pp JOIN Player p ON pp.Player_ID = p.Player_ID JOIN Team t ON p.Team_ID = t.Team_ID JOIN Coach c ON c.Coach_ID = t.Coach_ID WHERE c.Coach_ID = " + ID;
+            string query = "SELECT p.Name AS Player_Name, t.Name AS Team_Name, m.Date, m.Opponent, pp.Assists, pp.Goals, pp.Rating FROM Player_Performance pp JOIN Player p ON p.Player_ID = pp.Player_ID JOIN Team t ON t.Team_ID = p.Team_ID JOIN \"Match\" m ON m.Match_ID = pp.Match_ID JOIN Coach c ON c.Coach_ID = t.Coach_ID WHERE c.Coach_ID = " + ID;
             return dbMan.ExecuteReader(query);
         }
     }
