@@ -175,7 +175,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Green;
-            this.label7.Location = new System.Drawing.Point(501, 459);
+            this.label7.Location = new System.Drawing.Point(515, 459);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 16);
             this.label7.TabIndex = 15;
@@ -188,11 +188,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(237, 452);
+            this.label8.Location = new System.Drawing.Point(206, 452);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(186, 25);
+            this.label8.Size = new System.Drawing.Size(263, 25);
             this.label8.TabIndex = 14;
-            this.label8.Text = "Have an account?";
+            this.label8.Text = "Already have an account?";
             // 
             // label9
             // 
