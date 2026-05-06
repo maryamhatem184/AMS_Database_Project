@@ -74,7 +74,8 @@ namespace AMS_Database_Project
 
                         if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
                         {
-                            MessageBox.Show("Please enter both a username and a password.");
+                            label9.Visible = true;
+                            label5.Visible = false;
                             return;
                         }
 
@@ -83,7 +84,6 @@ namespace AMS_Database_Project
                         if (result != null)
                         {
                             string role = result.ToString();
-                            MessageBox.Show("Login Successful! Role: " + role);
 
 
                             if (role == "Manager")
@@ -112,7 +112,8 @@ namespace AMS_Database_Project
                         }
                         else
                         {
-                            MessageBox.Show("Invalid Username or Password.");
+                            label5.Visible = true;
+                            label9.Visible = false;
                         }
                     }
                 }

@@ -25,6 +25,17 @@ namespace AMS_Database_Project
             this.Hide();
         }
 
+        private void label7_MouseEnter_1(object sender, EventArgs e)
+        {
+            label7.Font = new Font(label7.Font, FontStyle.Underline);
+            label7.Cursor = Cursors.Hand;
+        }
+
+        private void label7_MouseLeave_1(object sender, EventArgs e)
+        {
+            label7.Font = new Font(label7.Font, FontStyle.Regular);
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             string username = textBox1.Text.Trim(); 
@@ -36,7 +47,7 @@ namespace AMS_Database_Project
 
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(nationalID) || string.IsNullOrWhiteSpace(email))
             {
-                MessageBox.Show("Please fill in all the required fields.");
+                label9.Visible = true;
                 return;
             }
 
@@ -82,17 +93,22 @@ namespace AMS_Database_Project
 
                         transaction.Commit();
 
-                        MessageBox.Show("Registration Complete! Your ID is: " + newUserID);
-
                         new Login().Show();
                         this.Hide();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show("Registration failed: " + ex.Message);
+                    label10.Visible = true;
                 }
         }
     }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Login Login = new Login();
+            Login.Show();
+            this.Hide();
+        }
     }
 }
