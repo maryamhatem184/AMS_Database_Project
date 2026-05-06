@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBapplication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,19 @@ namespace AMS_Database_Project
 {
     public partial class Schedule_Training_Session : Form
     {
-        public Schedule_Training_Session()
+        public Schedule_Training_Session(int ID)
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Controller controller = new Controller();
         }
     }
 }

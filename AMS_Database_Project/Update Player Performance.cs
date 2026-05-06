@@ -12,9 +12,14 @@ namespace AMS_Database_Project
 {
     public partial class Update_Player_Performance : Form
     {
-        public Update_Player_Performance()
+        public Update_Player_Performance(int ID)
         {
             InitializeComponent();
+        }
+
+        private void Update_Player_Performance_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -36,31 +36,31 @@ namespace AMS_Database_Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Check_Player_Availability Check_Player_Availability = new Check_Player_Availability();
+            Check_Player_Availability Check_Player_Availability = new Check_Player_Availability(coachID);
             Check_Player_Availability.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Schedule_Training_Session Schedule_Training_Session = new Schedule_Training_Session();
+            Schedule_Training_Session Schedule_Training_Session = new Schedule_Training_Session(coachID);
             Schedule_Training_Session.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Schedule_Match Schedule_Match = new Schedule_Match();
+            Schedule_Match Schedule_Match = new Schedule_Match(coachID);
             Schedule_Match.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Select_Players_For_Match Select_Players_For_Match = new Select_Players_For_Match();
+            Select_Players_For_Match Select_Players_For_Match = new Select_Players_For_Match(coachID);
             Select_Players_For_Match.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Update_Player_Performance Update_Player_Performance = new Update_Player_Performance();
+            Update_Player_Performance Update_Player_Performance = new Update_Player_Performance(coachID);
             Update_Player_Performance.Show();
         }
         private void button8_Click(object sender, EventArgs e)

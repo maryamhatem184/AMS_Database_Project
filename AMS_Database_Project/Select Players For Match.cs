@@ -12,7 +12,7 @@ namespace AMS_Database_Project
 {
     public partial class Select_Players_For_Match : Form
     {
-        public Select_Players_For_Match()
+        public Select_Players_For_Match(int ID)
         {
             InitializeComponent();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBapplication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace AMS_Database_Project
 {
     public partial class Check_Player_Availability : Form
     {
-        public Check_Player_Availability()
+        public Check_Player_Availability(int ID)
         {
             InitializeComponent();
+            Controller controller = new Controller();
+            dataGridView1.DataSource = controller.ShowAllPlayersAvailability(ID);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

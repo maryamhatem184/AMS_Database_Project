@@ -99,7 +99,7 @@ namespace AMS_Database_Project
                             else if (role == "Coach")
                             {
                                 Controller controller = new Controller();
-                                Coach coachForm = new Coach(controller.GetCoachID(textBox1.Text));
+                                Coach coachForm = new Coach(controller.GetID(textBox1.Text));
                                 coachForm.Show();
                             }
                             else if (role == "Fan")

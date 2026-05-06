@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Update_Player_Performance
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "Update_Player_Performance";
             this.Text = "Update_Player_Performance";
+            this.Load += new System.EventHandler(this.Update_Player_Performance_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

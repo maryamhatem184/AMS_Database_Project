@@ -12,7 +12,7 @@ namespace AMS_Database_Project
 {
     public partial class Schedule_Match : Form
     {
-        public Schedule_Match()
+        public Schedule_Match(int ID)
         {
             InitializeComponent();
         }

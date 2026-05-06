@@ -158,8 +158,20 @@
     <EmbeddedResource Include="Monitor Player Performance.resx">
       <DependentUpon>Monitor Player Performance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Schedule Match.resx">
+      <DependentUpon>Schedule Match.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schedule Training Session.resx">
+      <DependentUpon>Schedule Training Session.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Select Players For Match.resx">
+      <DependentUpon>Select Players For Match.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update Player Performance.resx">
+      <DependentUpon>Update Player Performance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View Team Roster.resx">
       <DependentUpon>View Team Roster.cs</DependentUpon>
