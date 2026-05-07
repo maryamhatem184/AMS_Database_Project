@@ -40,6 +40,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -152,11 +154,35 @@
             this.label7.Text = "Please Fill in All Fields.";
             this.label7.Visible = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(55, 372);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(295, 16);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "This Injury Record Already Exists for This Player.";
+            this.label8.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(127, 372);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(143, 16);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Adding an Injury Failed";
+            this.label9.Visible = false;
+            // 
             // Record_Player_Injury
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(398, 499);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -191,5 +217,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
