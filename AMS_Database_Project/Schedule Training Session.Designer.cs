@@ -42,6 +42,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -168,11 +170,35 @@
             this.label5.Text = "Please Fill All Slots to Schedule a Training Session";
             this.label5.Visible = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Green;
+            this.label8.Location = new System.Drawing.Point(59, 231);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(254, 16);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Training Session Scheduled Successfully";
+            this.label8.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Maroon;
+            this.label9.Location = new System.Drawing.Point(59, 231);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(177, 16);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Failed To Schedule Session";
+            this.label9.Visible = false;
+            // 
             // Schedule_Training_Session
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(508, 348);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -209,5 +235,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
