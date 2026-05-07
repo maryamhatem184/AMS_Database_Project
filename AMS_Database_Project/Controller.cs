@@ -117,5 +117,59 @@ namespace DBapplication
             string query = "DELETE FROM Player_Performance WHERE Match_ID = " + MatchID + " AND Player_ID = (SELECT Player_ID FROM Player WHERE Name = '" + PlayerName + "')";
             return dbMan.ExecuteNonQuery(query);
         }
+        public DataTable GetPlayerPerformanceForMatch(int MatchID, int ID)
+        {
+            string query = "SELECT p.Name AS Player_Name, pp.Assists, pp.Goals, pp.Rating FROM Player_Performance pp JOIN Player p ON p.Player_ID = pp.Player_ID WHERE pp.Match_ID = " + MatchID + " AND p.Player_ID = " + ID;
+            return dbMan.ExecuteReader(query);
+        }
+        public int UpdatePlayerPerformanceForMatch(int MatchID, int ID, int Assists, int Goals, int RatingNumber, int RatingDecimal)
+        {
+            string query = "UPDATE Player_Performance SET Assists = " + Assists + ", Goals = " + Goals + ", Rating = " + RatingNumber + "." + RatingDecimal + " WHERE Match_ID = " + MatchID + " AND Player_ID = " + ID;
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int GetPlayerID(string PlayerName)
+        {
+            string query = "SELECT Player_ID FROM Player WHERE Name = '" + PlayerName + "'";
+            object result = dbMan.ExecuteScalar(query);
+            if (result != null && result != DBNull.Value)
+                return Convert.ToInt32(result);
+            else
+                return -1;
+        }
+        public DataTable ShowAllPlayersForMatchWithPerformance(int MatchID)
+        {
+            string query = "SELECT p.Name AS Player_Name, pp.Assists, pp.Goals, pp.Rating FROM Player p JOIN Player_Performance pp ON p.Player_ID = pp.Player_ID WHERE pp.Match_ID = " + MatchID;
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable ShowAllPlayersPerformances()
+        {
+            string query = "SELECT p.Name AS Player_Name, t.Name AS Team_Name, m.Date, pp.Assists, pp.Goals, pp.Rating FROM Player p JOIN Team t ON p.Team_ID = t.Team_ID JOIN Player_Performance pp ON p.Player_ID = pp.Player_ID JOIN \"Match\" m ON pp.Match_ID = m.Match_ID WHERE pp.Rating IS NOT NULL";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable GetAllMerchandiseNames()
+        {
+            string query = "SELECT Name FROM Merchandise_Item";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable GetAllMerchandiseInfoByName(string MerchandiseName)
+        {
+            string query = "SELECT Name, Stock, Price FROM Merchandise_Item WHERE Name = '" + MerchandiseName + "'";
+            return dbMan.ExecuteReader(query);
+        }
+        public int RestockMerchandiseItem(string MerchandiseName)
+        {
+            string query = "UPDATE Merchandise_Item SET Stock = Stock + 100 WHERE Name = '" + MerchandiseName + "'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateMerchandiseItemPrice(string MerchandiseName, decimal NewPrice)
+        {
+            string query = "UPDATE Merchandise_Item SET Price = " + NewPrice + " WHERE Name = '" + MerchandiseName + "'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable ShowAllMatchSchedules()
+        {
+            string query = "SELECT m.Match_ID, CONCAT(m.Opponent, ' - ', CAST(m.Date AS VARCHAR), ' @ ', CAST(m.time AS VARCHAR(5))) AS MatchInfo, b.Name AS Branch_Name, t.Name AS Team_Name FROM dbo.\"Match\" m JOIN dbo.Branch b ON m.Branch_ID = b.Branch_ID JOIN dbo.Team t ON m.Team_ID = t.Team_ID";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }
