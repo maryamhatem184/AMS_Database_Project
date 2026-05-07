@@ -15,11 +15,17 @@ namespace AMS_Database_Project
         public Update_Player_Performance(int ID)
         {
             InitializeComponent();
+
         }
 
         private void Update_Player_Performance_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

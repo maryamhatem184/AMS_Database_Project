@@ -109,18 +109,18 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(264, 186);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 16);
+            this.label5.Size = new System.Drawing.Size(84, 16);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Select Rating";
+            this.label5.Text = "Select Goals";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(264, 245);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 16);
+            this.label6.Size = new System.Drawing.Size(91, 16);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Select Rating";
+            this.label6.Text = "Select Assists";
             // 
             // button1
             // 
@@ -139,6 +139,7 @@
             this.button2.TabIndex = 13;
             this.button2.Text = "Close";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBox4
             // 
