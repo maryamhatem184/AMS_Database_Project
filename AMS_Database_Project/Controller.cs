@@ -171,5 +171,73 @@ namespace DBapplication
             string query = "SELECT m.Match_ID, CONCAT(m.Opponent, ' - ', CAST(m.Date AS VARCHAR), ' @ ', CAST(m.time AS VARCHAR(5))) AS MatchInfo, b.Name AS Branch_Name, t.Name AS Team_Name FROM dbo.\"Match\" m JOIN dbo.Branch b ON m.Branch_ID = b.Branch_ID JOIN dbo.Team t ON m.Team_ID = t.Team_ID";
             return dbMan.ExecuteReader(query);
         }
+        public int RemoveBranch(string BranchName)
+        {
+            string query = "DELETE FROM Branch WHERE Name = '" + BranchName + "'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateBranch(string BranchName, int NewCapacity)
+        {
+            string query = "UPDATE Branch SET Capacity = " + NewCapacity + " WHERE Name = '" + BranchName + "'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int CreateBranch(string BranchName, string BranchLocation, int BranchCapacity)
+        {
+            string query = "INSERT INTO Branch (Name, Location, Capacity) VALUES ('" + BranchName + "', '" + BranchLocation + "', " + BranchCapacity + ")";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable GetAllSportsSectionNames()
+        {
+            string query = "SELECT Name FROM Sport";
+            return dbMan.ExecuteReader(query);
+        }
+        public int AddSportsSection(string SportName)
+        {
+            string query = "INSERT INTO Sport (Name) VALUES ('" + SportName + "')";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int RemoveSportsSection(string SportName)
+        {
+            string query = "DELETE FROM Sport WHERE Name = '" + SportName + "'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable GetAllFansNames()
+        {
+            string query = "SELECT Name FROM Fan";
+            return dbMan.ExecuteReader(query);
+        }
+        public int DeactivateMembership(int FanID)
+        {
+            string query = "DELETE FROM Membership WHERE Fan_ID = " + FanID;
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int RegisterMembership(int FanID, string MembershipType, string StartDate, string EndDate)
+        {
+            string query = "INSERT INTO Membership (Fan_ID, Type, Start_Date, Expiry_Date) VALUES (" + FanID + ", '" + MembershipType + "', '" + StartDate + "', '" + EndDate + "')";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int GetFanIDByName(string FanName)
+        {
+            string query = "SELECT Fan_ID FROM Fan WHERE Name = '" + FanName + "'";
+            object result = dbMan.ExecuteScalar(query);
+            if (result != null && result != DBNull.Value)
+                return Convert.ToInt32(result);
+            else
+                return -1;
+        }
+        public DataTable GetAllMembersID()
+        {
+            string query = "SELECT Fan_ID FROM Membership";
+            return dbMan.ExecuteReader(query);
+        }
+        public string GetFanNameByID(string FanID)
+        {
+            string query = "SELECT Name FROM Fan WHERE Fan_ID = " + FanID;
+            object result = dbMan.ExecuteScalar(query);
+            if (result != null && result != DBNull.Value)
+                return result.ToString();
+            else
+                return null;
+        }
     }
 }
