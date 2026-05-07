@@ -92,5 +92,30 @@ namespace DBapplication
             string query = "INSERT INTO dbo.\"Match\"(Match_ID, \"Date\", \"time\", Opponent, Branch_ID, Team_ID) VALUES (" + MatchID + ", '" + date + "', '" + hour + ":" + minute + ":00', '" + Opponent + "', " + BranchID + ", " + teamID + ")";
             return dbMan.ExecuteNonQuery(query);
         }
+        public DataTable ShowAllMatchesInfo(int ID)
+        {
+            string query = "SELECT m.Match_ID, CONCAT(m.Opponent, ' - ', CAST(m.Date AS VARCHAR), ' @ ', CAST(m.time AS VARCHAR(5))) AS MatchInfo FROM dbo.\"Match\" m JOIN dbo.Team t ON m.Team_ID = t.Team_ID JOIN dbo.Coach c ON t.Coach_ID = c.Coach_ID WHERE m.Opponent IS NOT NULL AND c.Coach_ID = " + ID;
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable ShowAllPlayersForMatch(int MatchID)
+        {
+            string query = "SELECT p.Name AS Player_Name, p.Position FROM Player p JOIN Team t ON p.Team_ID = t.Team_ID JOIN \"Match\" m ON m.Team_ID = t.Team_ID WHERE m.Match_ID = " + MatchID + " AND p.Name NOT IN (SELECT p.Name AS Player_Name FROM Player_Performance pp JOIN Player ON pp.Player_ID = p.Player_ID WHERE Match_ID = " + MatchID + ")";
+            return dbMan.ExecuteReader(query);
+        }
+        public int AddPlayerToMatch(int MatchID, string PlayerName)
+        {
+            string query = "INSERT INTO Player_Performance (Performance_ID, Player_ID, Match_ID) VALUES (((SELECT Count(*) FROM Player_Performance) + 1),(SELECT Player_ID FROM Player WHERE Name = '" + PlayerName + "'), " + MatchID + ")";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable ShowAllSelectedPlayersForMatch(int MatchID)
+        {
+            string query = "SELECT p.Name AS Player_Name, p.Position FROM Player p JOIN Player_Performance pp ON p.Player_ID = pp.Player_ID WHERE pp.Match_ID = " + MatchID;
+            return dbMan.ExecuteReader(query);
+        }
+        public int RemovePlayerFromMatch(int MatchID, string PlayerName)
+        {
+            string query = "DELETE FROM Player_Performance WHERE Match_ID = " + MatchID + " AND Player_ID = (SELECT Player_ID FROM Player WHERE Name = '" + PlayerName + "')";
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
 }
