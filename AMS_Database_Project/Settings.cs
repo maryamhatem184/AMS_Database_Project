@@ -46,7 +46,6 @@ namespace AMS_Database_Project
             label6.Visible = false;
             if (textBox1.Text != "" && textBox2.Text != "")
             {
-                label8.Visible = true;
                 
                 if (textBox1.Text == textBox2.Text)
                 {
@@ -98,6 +97,10 @@ namespace AMS_Database_Project
                         }
                     }
                 }
+            }
+            else
+            {
+                label8.Visible = true;
             }
         }
 
