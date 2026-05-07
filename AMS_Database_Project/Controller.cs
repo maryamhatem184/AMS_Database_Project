@@ -117,5 +117,29 @@ namespace DBapplication
             string query = "DELETE FROM Player_Performance WHERE Match_ID = " + MatchID + " AND Player_ID = (SELECT Player_ID FROM Player WHERE Name = '" + PlayerName + "')";
             return dbMan.ExecuteNonQuery(query);
         }
+        public DataTable GetPlayerPerformanceForMatch(int MatchID, int ID)
+        {
+            string query = "SELECT p.Name AS Player_Name, pp.Assists, pp.Goals, pp.Rating FROM Player_Performance pp JOIN Player p ON p.Player_ID = pp.Player_ID WHERE pp.Match_ID = " + MatchID + " AND p.Player_ID = " + ID;
+            return dbMan.ExecuteReader(query);
+        }
+        public int UpdatePlayerPerformanceForMatch(int MatchID, int ID, int Assists, int Goals, int RatingNumber, int RatingDecimal)
+        {
+            string query = "UPDATE Player_Performance SET Assists = " + Assists + ", Goals = " + Goals + ", Rating = " + RatingNumber + "." + RatingDecimal + " WHERE Match_ID = " + MatchID + " AND Player_ID = " + ID;
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int GetPlayerID(string PlayerName)
+        {
+            string query = "SELECT Player_ID FROM Player WHERE Name = '" + PlayerName + "'";
+            object result = dbMan.ExecuteScalar(query);
+            if (result != null && result != DBNull.Value)
+                return Convert.ToInt32(result);
+            else
+                return -1;
+        }
+        public DataTable ShowAllPlayersForMatchWithPerformance(int MatchID)
+        {
+            string query = "SELECT p.Name AS Player_Name, pp.Assists, pp.Goals, pp.Rating FROM Player p JOIN Player_Performance pp ON p.Player_ID = pp.Player_ID WHERE pp.Match_ID = " + MatchID;
+            return dbMan.ExecuteReader(query);
+        }
     }
 }

@@ -42,6 +42,12 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -51,6 +57,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -59,6 +66,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 1;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox3
             // 
@@ -130,6 +138,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Update Player Performance";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -164,12 +173,81 @@
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(47, 24);
             this.comboBox6.TabIndex = 16;
+            this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(437, 98);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(23, 16);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "ID:";
+            this.label7.Visible = false;
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.Enabled = false;
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(475, 95);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(66, 24);
+            this.comboBox7.TabIndex = 18;
+            this.comboBox7.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(437, 158);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(23, 16);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "ID:";
+            this.label8.Visible = false;
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.Enabled = false;
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(475, 155);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(66, 24);
+            this.comboBox8.TabIndex = 20;
+            this.comboBox8.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Maroon;
+            this.label9.Location = new System.Drawing.Point(417, 411);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(133, 16);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Please Fill All Values";
+            this.label9.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Green;
+            this.label10.Location = new System.Drawing.Point(382, 411);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(211, 16);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Performance Updated Succesfully";
+            this.label10.Visible = false;
             // 
             // Update_Player_Performance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.comboBox8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.comboBox7);
             this.Controls.Add(this.comboBox6);
             this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.comboBox4);
@@ -186,7 +264,6 @@
             this.Controls.Add(this.comboBox1);
             this.Name = "Update_Player_Performance";
             this.Text = "Update_Player_Performance";
-            this.Load += new System.EventHandler(this.Update_Player_Performance_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,5 +285,11 @@
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
