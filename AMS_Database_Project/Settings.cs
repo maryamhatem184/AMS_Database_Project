@@ -46,8 +46,11 @@ namespace AMS_Database_Project
             label6.Visible = false;
             if (textBox1.Text != "" && textBox2.Text != "")
             {
+                label8.Visible = true;
+                
                 if (textBox1.Text == textBox2.Text)
                 {
+                    label8.Visible = false;
                     label7.Visible = true;
                     label6.Visible = false;
                     label5.Visible = false;
@@ -96,6 +99,11 @@ namespace AMS_Database_Project
                     }
                 }
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -111,7 +111,12 @@ namespace AMS_Database_Project
                                 fanForm.Show();
                             }
 
-                            this.Hide();
+                            else
+                            {
+                                label6.Visible = true;
+                                label5.Visible = false;
+                            }
+                                this.Hide();
                         }
                         else
                         {

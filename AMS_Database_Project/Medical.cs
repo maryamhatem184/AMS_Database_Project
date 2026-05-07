@@ -26,5 +26,12 @@ namespace AMS_Database_Project
             Settings settings = new Settings(medicalID);
             settings.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Record_Player_Injury record_Player_Injury = new Record_Player_Injury(medicalID);
+            record_Player_Injury.Show();
+            this.Hide();
+        }
     }
 }
