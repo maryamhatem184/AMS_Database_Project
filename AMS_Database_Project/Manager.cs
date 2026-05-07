@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBapplication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace AMS_Database_Project
 {
     public partial class Manager : Form
     {
-        public Manager()
+        private int managerID;
+        public Manager(int ID)
         {
             InitializeComponent();
+            Controller controller = new Controller();
+            managerID = ID;
         }
 
         private void Manager_Load(object sender, EventArgs e)
@@ -24,7 +28,7 @@ namespace AMS_Database_Project
 
         private void button11_Click(object sender, EventArgs e)
         {
-            Settings settings = new Settings();
+            Settings settings = new Settings(managerID);
             settings.Show();
         }
     }

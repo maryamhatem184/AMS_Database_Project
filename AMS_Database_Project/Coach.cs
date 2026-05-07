@@ -65,7 +65,7 @@ namespace AMS_Database_Project
         }
         private void button8_Click(object sender, EventArgs e)
         {
-            Settings settings = new Settings();
+            Settings settings = new Settings(coachID);
             settings.Show();
         }
     }

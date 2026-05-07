@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBapplication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,18 @@ namespace AMS_Database_Project
 {
     public partial class Fan : Form
     {
-        public Fan()
-        {
+        private int fanID;
+
+        public Fan(int ID) {
+        
             InitializeComponent();
+            Controller controller = new Controller();
+            fanID = ID;
+        }
+ 
+        private void Fan_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -54,7 +54,7 @@ namespace AMS_Database_Project
         {
 
             string user = textBox1.Text.Trim();
-            string pass = textBox2.Text;
+            string pass = textBox2.Text.Trim();
 
 
             string connString = @"Data Source=.;Initial Catalog=""Database project - AMS"";Integrated Security=True;";
@@ -88,12 +88,14 @@ namespace AMS_Database_Project
 
                             if (role == "Manager")
                             {
-                                Manager mForm = new Manager();
+                                Controller controller = new Controller();
+                                Manager mForm = new Manager(controller.GetID(textBox1.Text));
                                 mForm.Show();
                             }
                             else if (role == "Medical")
                             {
-                                Medical medForm = new Medical();
+                                Controller controller = new Controller();
+                                Medical medForm = new Medical(controller.GetID(textBox1.Text));
                                 medForm.Show();
                             }
                             else if (role == "Coach")
@@ -104,7 +106,8 @@ namespace AMS_Database_Project
                             }
                             else if (role == "Fan")
                             {
-                                Fan fanForm = new Fan();
+                                Controller controller = new Controller();
+                                Fan fanForm = new Fan(controller.GetID(textBox1.Text));
                                 fanForm.Show();
                             }
 

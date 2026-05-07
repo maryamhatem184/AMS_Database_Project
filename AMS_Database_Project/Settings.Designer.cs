@@ -39,6 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -147,11 +148,23 @@
             this.label6.Text = "Either your Current Password is Wrong or The New Password is not Unique";
             this.label6.Visible = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.DarkRed;
+            this.label7.Location = new System.Drawing.Point(47, 160);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(359, 16);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "The New Password is The Same as The Current Password.";
+            this.label7.Visible = false;
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 265);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -183,5 +196,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

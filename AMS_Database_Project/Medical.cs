@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBapplication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,17 @@ namespace AMS_Database_Project
 {
     public partial class Medical : Form
     {
-        public Medical()
+        private int medicalID;
+        public Medical(int ID)
         {
             InitializeComponent();
+            Controller controller = new Controller();
+            medicalID = ID;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Settings settings = new Settings();
+            Settings settings = new Settings(medicalID);
             settings.Show();
         }
     }
