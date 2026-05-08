@@ -239,5 +239,20 @@ namespace DBapplication
             else
                 return null;
         }
+        public DataTable GetAllMedicalStaffNames()
+        {
+            string query = "SELECT Name FROM Medical_Staff";
+            return dbMan.ExecuteReader(query);
+        }
+        public int RegisterMedicalStaff(string Name, string Role)
+        {
+            string query = "INSERT INTO Medical_Staff (Name, Role) VALUES ('" + Name + "', '" + Role + "')";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int DeactivateMedicalStaff(string Name)
+        {
+            string query = "DELETE FROM Medical_Staff WHERE Name = '" + Name + "'";
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
 }
