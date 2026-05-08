@@ -26,7 +26,6 @@ namespace AMS_Database_Project
 
 
         }
-
         private void FillComboBox()
         {
             string connString = @"Data Source=.;Initial Catalog=""Database project - AMS"";Integrated Security=True;";
@@ -38,11 +37,12 @@ namespace AMS_Database_Project
                 {
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
-                    da.Fill(dt);
+                    da.Fill(dt); 
 
                     comboBox1.DataSource = dt;
                     comboBox1.DisplayMember = "Name";
                     comboBox1.ValueMember = "Player_ID";
+                    comboBox1.SelectedIndex = -1;
                 }
                 catch (Exception ex)
                 {
@@ -53,6 +53,12 @@ namespace AMS_Database_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedValue == null || comboBox1.SelectedValue is System.Data.DataRowView)
+            {
+                label7.Visible = true;
+                return;
+            }
+
             string query = "INSERT INTO Injury_Record (Player_ID, Injury, Recovery_Status, Expected_Return_Date) VALUES (@PlayerID, @Injury, @RecoveryStatus, @ExpectedReturnDate)";
 
             using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=""Database project - AMS"";Integrated Security=True;"))
@@ -116,6 +122,11 @@ namespace AMS_Database_Project
                     
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

@@ -162,11 +162,29 @@
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Track Rehabilitation Programs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Track Rehabilitation Programs.Designer.cs">
+      <DependentUpon>Track Rehabilitation Programs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update Injury Recovery Progress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update Injury Recovery Progress.Designer.cs">
+      <DependentUpon>Update Injury Recovery Progress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Update Merchandise Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Update Merchandise Inventory.Designer.cs">
       <DependentUpon>Update Merchandise Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update Player Availability.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update Player Availability.Designer.cs">
+      <DependentUpon>Update Player Availability.cs</DependentUpon>
     </Compile>
     <Compile Include="Update Player Performance.cs">
       <SubType>Form</SubType>
@@ -179,6 +197,12 @@
     </Compile>
     <Compile Include="View Match Schedules.Designer.cs">
       <DependentUpon>View Match Schedules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Player Medical History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View Player Medical History.Designer.cs">
+      <DependentUpon>View Player Medical History.cs</DependentUpon>
     </Compile>
     <Compile Include="View Team Roster.cs">
       <SubType>Form</SubType>
@@ -263,14 +287,26 @@
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Track Rehabilitation Programs.resx">
+      <DependentUpon>Track Rehabilitation Programs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update Injury Recovery Progress.resx">
+      <DependentUpon>Update Injury Recovery Progress.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Update Merchandise Inventory.resx">
       <DependentUpon>Update Merchandise Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update Player Availability.resx">
+      <DependentUpon>Update Player Availability.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Update Player Performance.resx">
       <DependentUpon>Update Player Performance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View Match Schedules.resx">
       <DependentUpon>View Match Schedules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View Player Medical History.resx">
+      <DependentUpon>View Player Medical History.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View Team Roster.resx">
       <DependentUpon>View Team Roster.cs</DependentUpon>

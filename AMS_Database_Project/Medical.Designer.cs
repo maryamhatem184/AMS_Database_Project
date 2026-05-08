@@ -44,6 +44,7 @@
             this.button5.TabIndex = 9;
             this.button5.Text = "View Player Medical History";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -53,6 +54,7 @@
             this.button4.TabIndex = 8;
             this.button4.Text = "Update Player Availability";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -62,6 +64,7 @@
             this.button3.TabIndex = 7;
             this.button3.Text = "Track Rehabilitation Programs";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -71,6 +74,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Update Injury Recovery Progress";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -96,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 522);
+            this.ClientSize = new System.Drawing.Size(366, 522);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
