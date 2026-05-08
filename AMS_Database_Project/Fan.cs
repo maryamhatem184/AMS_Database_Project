@@ -26,5 +26,35 @@ namespace AMS_Database_Project
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings(fanID);
+            settings.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form4 form4 = new Form4();
+            form4.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MembershipForm form2 = new MembershipForm();
+            form2.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form4 form4 = new Form4();
+            form4.Show();
+        }
     }
 }

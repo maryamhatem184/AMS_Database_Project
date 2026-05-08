@@ -17,8 +17,8 @@ namespace AMS_Database_Project
         public Login()
         {
             InitializeComponent();
-            textBox1.Text = "admin_manager";
-            textBox2.Text = "123";
+            //textBox1.Text = "admin_manager";
+            //textBox2.Text = "123";
         }
 
         private void label4_MouseEnter(object sender, EventArgs e)
