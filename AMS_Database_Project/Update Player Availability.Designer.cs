@@ -44,6 +44,7 @@
             // 
             // button2
             // 
+            this.button2.ForeColor = System.Drawing.Color.DarkRed;
             this.button2.Location = new System.Drawing.Point(260, 287);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 29);
@@ -55,6 +56,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.DarkRed;
             this.label4.Location = new System.Drawing.Point(48, 46);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 16);
@@ -63,6 +65,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(194, 43);
             this.comboBox1.Name = "comboBox1";
@@ -72,7 +75,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(131, 242);
+            this.button1.ForeColor = System.Drawing.Color.DarkRed;
+            this.button1.Location = new System.Drawing.Point(132, 249);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 33);
             this.button1.TabIndex = 20;
@@ -83,6 +87,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
             this.label1.Location = new System.Drawing.Point(48, 168);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 16);
@@ -92,6 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DarkRed;
             this.label2.Location = new System.Drawing.Point(48, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 16);
@@ -101,6 +107,7 @@
             // textBox1
             // 
             this.textBox1.Enabled = false;
+            this.textBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox1.Location = new System.Drawing.Point(215, 102);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
@@ -108,6 +115,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox2.Location = new System.Drawing.Point(215, 165);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 22);
@@ -116,7 +124,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label3.ForeColor = System.Drawing.Color.Green;
             this.label3.Location = new System.Drawing.Point(64, 214);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(251, 16);
@@ -127,7 +135,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.ForeColor = System.Drawing.Color.DarkRed;
             this.label5.Location = new System.Drawing.Point(64, 214);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(234, 16);
@@ -138,7 +146,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.ForeColor = System.Drawing.Color.DarkRed;
             this.label6.Location = new System.Drawing.Point(115, 214);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(131, 16);
@@ -149,7 +157,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.ForeColor = System.Drawing.Color.DarkRed;
             this.label7.Location = new System.Drawing.Point(85, 214);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(183, 16);
@@ -174,6 +182,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Update_Player_Availability";
             this.Text = "Update Player Availability";
             this.Load += new System.EventHandler(this.Update_Player_Availability_Load);

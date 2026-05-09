@@ -52,6 +52,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(234, 51);
             this.comboBox1.Name = "comboBox1";
@@ -61,6 +62,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(234, 111);
             this.comboBox2.Name = "comboBox2";
@@ -70,6 +72,7 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(330, 283);
             this.comboBox3.Name = "comboBox3";
@@ -79,6 +82,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
             this.label1.Location = new System.Drawing.Point(314, 288);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(10, 16);
@@ -88,6 +92,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DarkRed;
             this.label2.Location = new System.Drawing.Point(69, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 16);
@@ -97,6 +102,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.DarkRed;
             this.label3.Location = new System.Drawing.Point(69, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 16);
@@ -106,6 +112,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.DarkRed;
             this.label4.Location = new System.Drawing.Point(69, 286);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 16);
@@ -115,6 +122,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.DarkRed;
             this.label5.Location = new System.Drawing.Point(69, 172);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 16);
@@ -124,6 +132,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.DarkRed;
             this.label6.Location = new System.Drawing.Point(69, 231);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 16);
@@ -132,7 +141,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(190, 338);
+            this.button1.ForeColor = System.Drawing.Color.DarkRed;
+            this.button1.Location = new System.Drawing.Point(138, 334);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(208, 37);
             this.button1.TabIndex = 12;
@@ -142,9 +152,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(36, 338);
+            this.button2.ForeColor = System.Drawing.Color.DarkRed;
+            this.button2.Location = new System.Drawing.Point(352, 407);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 37);
+            this.button2.Size = new System.Drawing.Size(112, 37);
             this.button2.TabIndex = 13;
             this.button2.Text = "Close";
             this.button2.UseVisualStyleBackColor = true;
@@ -152,6 +163,7 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(234, 169);
             this.comboBox4.Name = "comboBox4";
@@ -160,6 +172,7 @@
             // 
             // comboBox5
             // 
+            this.comboBox5.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(234, 228);
             this.comboBox5.Name = "comboBox5";
@@ -168,8 +181,9 @@
             // 
             // comboBox6
             // 
+            this.comboBox6.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(234, 280);
+            this.comboBox6.Location = new System.Drawing.Point(234, 283);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(74, 24);
             this.comboBox6.TabIndex = 16;
@@ -178,6 +192,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.DarkRed;
             this.label7.Location = new System.Drawing.Point(242, 84);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(23, 16);
@@ -188,6 +203,7 @@
             // comboBox7
             // 
             this.comboBox7.Enabled = false;
+            this.comboBox7.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Location = new System.Drawing.Point(280, 81);
             this.comboBox7.Name = "comboBox7";
@@ -198,6 +214,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.DarkRed;
             this.label8.Location = new System.Drawing.Point(242, 144);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(23, 16);
@@ -208,6 +225,7 @@
             // comboBox8
             // 
             this.comboBox8.Enabled = false;
+            this.comboBox8.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox8.FormattingEnabled = true;
             this.comboBox8.Location = new System.Drawing.Point(280, 141);
             this.comboBox8.Name = "comboBox8";
@@ -219,7 +237,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Maroon;
-            this.label9.Location = new System.Drawing.Point(213, 397);
+            this.label9.Location = new System.Drawing.Point(175, 385);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(133, 16);
             this.label9.TabIndex = 22;
@@ -230,7 +248,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.Green;
-            this.label10.Location = new System.Drawing.Point(187, 397);
+            this.label10.Location = new System.Drawing.Point(135, 385);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(211, 16);
             this.label10.TabIndex = 23;
@@ -241,7 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 450);
+            this.ClientSize = new System.Drawing.Size(476, 456);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -262,8 +280,9 @@
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Update_Player_Performance";
-            this.Text = "Update_Player_Performance";
+            this.Text = "Update Player Performance";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -47,6 +47,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(229, 42);
             this.comboBox1.Name = "comboBox1";
@@ -57,14 +58,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
             this.label1.Location = new System.Drawing.Point(36, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 16);
+            this.label1.Size = new System.Drawing.Size(101, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Select a Player";
+            this.label1.Text = "Select a Player:";
             // 
             // textBox1
             // 
+            this.textBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox1.Location = new System.Drawing.Point(229, 124);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 22);
@@ -73,14 +76,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DarkRed;
             this.label2.Location = new System.Drawing.Point(36, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 16);
+            this.label2.Size = new System.Drawing.Size(90, 16);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Add the Injury";
+            this.label2.Text = "Add the Injury:";
             // 
             // button1
             // 
+            this.button1.ForeColor = System.Drawing.Color.DarkRed;
             this.button1.Location = new System.Drawing.Point(148, 415);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 33);
@@ -92,14 +97,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.DarkRed;
             this.label3.Location = new System.Drawing.Point(36, 203);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 16);
+            this.label3.Size = new System.Drawing.Size(158, 16);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Add the Recovery Status";
+            this.label3.Text = "Add the Recovery Status:";
             // 
             // textBox2
             // 
+            this.textBox2.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox2.Location = new System.Drawing.Point(229, 200);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(121, 22);
@@ -108,6 +115,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.DarkRed;
             this.label4.Location = new System.Drawing.Point(92, 279);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(209, 16);
@@ -125,7 +133,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.Control;
-            this.label5.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label5.ForeColor = System.Drawing.Color.Green;
             this.label5.Location = new System.Drawing.Point(92, 372);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(225, 16);
@@ -136,7 +144,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.ForeColor = System.Drawing.Color.DarkRed;
             this.label6.Location = new System.Drawing.Point(109, 372);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(186, 16);
@@ -147,8 +155,8 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(127, 372);
+            this.label7.ForeColor = System.Drawing.Color.DarkRed;
+            this.label7.Location = new System.Drawing.Point(126, 372);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(144, 16);
             this.label7.TabIndex = 12;
@@ -158,7 +166,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.ForeColor = System.Drawing.Color.DarkRed;
             this.label8.Location = new System.Drawing.Point(55, 372);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(295, 16);
@@ -169,7 +177,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.ForeColor = System.Drawing.Color.DarkRed;
             this.label9.Location = new System.Drawing.Point(127, 372);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(143, 16);
@@ -179,6 +187,7 @@
             // 
             // button2
             // 
+            this.button2.ForeColor = System.Drawing.Color.DarkRed;
             this.button2.Location = new System.Drawing.Point(293, 458);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 29);

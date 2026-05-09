@@ -47,6 +47,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox2.Location = new System.Drawing.Point(137, 91);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(200, 22);
@@ -55,6 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DarkRed;
             this.label2.Location = new System.Drawing.Point(37, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 16);
@@ -63,7 +65,8 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(322, 236);
+            this.button4.ForeColor = System.Drawing.Color.DarkRed;
+            this.button4.Location = new System.Drawing.Point(567, 266);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 33);
             this.button4.TabIndex = 94;
@@ -75,18 +78,18 @@
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.Green;
-            this.label15.Location = new System.Drawing.Point(453, 178);
+            this.label15.Location = new System.Drawing.Point(365, 185);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(166, 16);
+            this.label15.Size = new System.Drawing.Size(177, 16);
             this.label15.TabIndex = 93;
-            this.label15.Text = "Medic Deleted Succesfully";
+            this.label15.Text = "Medical Deleted Succesfully";
             this.label15.Visible = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Green;
-            this.label8.Location = new System.Drawing.Point(124, 167);
+            this.label8.Location = new System.Drawing.Point(125, 185);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(147, 16);
             this.label8.TabIndex = 92;
@@ -96,8 +99,8 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.Maroon;
-            this.label13.Location = new System.Drawing.Point(479, 178);
+            this.label13.ForeColor = System.Drawing.Color.DarkRed;
+            this.label13.Location = new System.Drawing.Point(374, 185);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(140, 16);
             this.label13.TabIndex = 91;
@@ -106,7 +109,8 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(502, 197);
+            this.button3.ForeColor = System.Drawing.Color.DarkRed;
+            this.button3.Location = new System.Drawing.Point(400, 215);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 33);
             this.button3.TabIndex = 90;
@@ -116,7 +120,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(145, 197);
+            this.button1.ForeColor = System.Drawing.Color.DarkRed;
+            this.button1.Location = new System.Drawing.Point(146, 215);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 33);
             this.button1.TabIndex = 89;
@@ -126,6 +131,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(494, 88);
             this.comboBox2.Name = "comboBox2";
@@ -135,6 +141,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.DarkRed;
             this.label10.Location = new System.Drawing.Point(387, 91);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(99, 16);
@@ -144,8 +151,8 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Maroon;
-            this.label7.Location = new System.Drawing.Point(142, 167);
+            this.label7.ForeColor = System.Drawing.Color.DarkRed;
+            this.label7.Location = new System.Drawing.Point(143, 185);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 16);
             this.label7.TabIndex = 86;
@@ -155,6 +162,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.DarkRed;
             this.label4.Location = new System.Drawing.Point(37, 91);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 16);
@@ -164,7 +172,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(483, 39);
+            this.label3.ForeColor = System.Drawing.Color.DarkRed;
+            this.label3.Location = new System.Drawing.Point(387, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 16);
             this.label3.TabIndex = 84;
@@ -173,7 +182,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(141, 39);
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
+            this.label1.Location = new System.Drawing.Point(37, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 16);
             this.label1.TabIndex = 83;
@@ -181,6 +191,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox1.Location = new System.Drawing.Point(137, 129);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(200, 22);
@@ -207,7 +218,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "Register_Deactivate_Medical_Staff";
-            this.Text = "Register_Deactivate_Medical_Staff";
+            this.Text = "Register/Deactivate Medical Staff";
             this.ResumeLayout(false);
             this.PerformLayout();
 

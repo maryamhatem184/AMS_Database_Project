@@ -48,6 +48,9 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.DarkRed;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.DarkRed;
+            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.DarkRed;
             this.dateTimePicker1.Location = new System.Drawing.Point(222, 52);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(213, 22);
@@ -55,6 +58,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(222, 92);
             this.comboBox1.Name = "comboBox1";
@@ -63,6 +67,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(330, 92);
             this.comboBox2.Name = "comboBox2";
@@ -72,42 +77,47 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
             this.label1.Location = new System.Drawing.Point(59, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 16);
+            this.label1.Size = new System.Drawing.Size(80, 16);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Select Date";
+            this.label1.Text = "Select Date:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DarkRed;
             this.label2.Location = new System.Drawing.Point(59, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 16);
+            this.label2.Size = new System.Drawing.Size(82, 16);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Select Time";
+            this.label2.Text = "Select Time:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.DarkRed;
             this.label3.Location = new System.Drawing.Point(59, 146);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 16);
+            this.label3.Size = new System.Drawing.Size(102, 16);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Select Location";
+            this.label3.Text = "Select Location:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.DarkRed;
             this.label4.Location = new System.Drawing.Point(59, 192);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 16);
+            this.label4.Size = new System.Drawing.Size(87, 16);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Select Team";
+            this.label4.Text = "Select Team:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.DarkRed;
             this.label6.Location = new System.Drawing.Point(310, 95);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(14, 16);
@@ -117,6 +127,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.DarkRed;
             this.label7.Location = new System.Drawing.Point(417, 95);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(18, 16);
@@ -125,6 +136,7 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(222, 143);
             this.comboBox3.Name = "comboBox3";
@@ -133,6 +145,7 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(222, 189);
             this.comboBox4.Name = "comboBox4";
@@ -141,7 +154,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(281, 261);
+            this.button1.ForeColor = System.Drawing.Color.DarkRed;
+            this.button1.Location = new System.Drawing.Point(186, 265);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 39);
             this.button1.TabIndex = 13;
@@ -151,19 +165,20 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(62, 261);
+            this.button2.ForeColor = System.Drawing.Color.DarkRed;
+            this.button2.Location = new System.Drawing.Point(388, 297);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(201, 39);
+            this.button2.Size = new System.Drawing.Size(108, 39);
             this.button2.TabIndex = 14;
-            this.button2.Text = "Close Schedule Session";
+            this.button2.Text = "Close";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(59, 231);
+            this.label5.ForeColor = System.Drawing.Color.DarkRed;
+            this.label5.Location = new System.Drawing.Point(59, 235);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(310, 16);
             this.label5.TabIndex = 15;
@@ -174,7 +189,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Green;
-            this.label8.Location = new System.Drawing.Point(59, 231);
+            this.label8.Location = new System.Drawing.Point(59, 235);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(254, 16);
             this.label8.TabIndex = 16;
@@ -184,8 +199,8 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Maroon;
-            this.label9.Location = new System.Drawing.Point(59, 231);
+            this.label9.ForeColor = System.Drawing.Color.DarkRed;
+            this.label9.Location = new System.Drawing.Point(59, 235);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(177, 16);
             this.label9.TabIndex = 17;
@@ -213,8 +228,9 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dateTimePicker1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Schedule_Training_Session";
-            this.Text = "Schedule_Training_Session";
+            this.Text = "Schedule Training Session";
             this.ResumeLayout(false);
             this.PerformLayout();
 

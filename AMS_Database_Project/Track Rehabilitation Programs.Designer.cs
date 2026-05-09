@@ -38,6 +38,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.DarkRed;
             this.label4.Location = new System.Drawing.Point(54, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 16);
@@ -46,6 +47,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(277, 51);
             this.comboBox1.Name = "comboBox1";
@@ -65,6 +67,7 @@
             // 
             // button2
             // 
+            this.button2.ForeColor = System.Drawing.Color.DarkRed;
             this.button2.Location = new System.Drawing.Point(359, 409);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 29);
@@ -82,6 +85,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Track_Rehabilitation_Programs";
             this.Text = "Track Rehabilitation Programs";
             this.Load += new System.EventHandler(this.Track_Rehabilitation_Programs_Load);

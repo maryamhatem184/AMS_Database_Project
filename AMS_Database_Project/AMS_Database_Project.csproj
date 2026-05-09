@@ -74,6 +74,12 @@
     <Compile Include="Controller.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DBManager.cs" />
+    <Compile Include="Fan Username.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fan Username.Designer.cs">
+      <DependentUpon>Fan Username.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Coach.resx">
       <DependentUpon>Coach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fan Username.resx">
+      <DependentUpon>Fan Username.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fan.resx">
       <DependentUpon>Fan.cs</DependentUpon>

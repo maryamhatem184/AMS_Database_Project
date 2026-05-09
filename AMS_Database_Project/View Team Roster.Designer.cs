@@ -45,11 +45,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(637, 333);
+            this.button1.ForeColor = System.Drawing.Color.DarkRed;
+            this.button1.Location = new System.Drawing.Point(658, 362);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 47);
+            this.button1.Size = new System.Drawing.Size(130, 43);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Close View";
+            this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -57,11 +58,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 395);
+            this.ClientSize = new System.Drawing.Size(800, 417);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "View_Team_Roster";
-            this.Text = "View_Team_Roster";
+            this.Text = "View Team Roster";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

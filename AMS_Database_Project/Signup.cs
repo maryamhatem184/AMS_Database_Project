@@ -38,14 +38,16 @@ namespace AMS_Database_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string username = textBox1.Text.Trim(); 
-            string password = textBox2.Text.Trim();      
-            string nationalID = textBox4.Text.Trim();    
+            string firstname = textBox1.Text.Trim();
+            string lastname = textBox3.Text.Trim();
+            string password = textBox2.Text.Trim();
+            string nationalID = textBox4.Text.Trim();
             string email = textBox5.Text.Trim();
             string phone = textBox6.Text.Trim();
             string role = "Fan";
+            string username = "fan_" + (firstname.Length > 0 ? char.ToLower(firstname[0]) + firstname.Substring(1) : "");
 
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(nationalID) || string.IsNullOrWhiteSpace(email))
+            if (string.IsNullOrWhiteSpace(firstname) || string.IsNullOrWhiteSpace(lastname) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(nationalID) || string.IsNullOrWhiteSpace(email))
             {
                 label9.Visible = true;
                 return;
@@ -62,11 +64,26 @@ namespace AMS_Database_Project
 
                     using (SqlTransaction transaction = conn.BeginTransaction())
                     {
+                        if (IsUsernameTaken(conn, transaction, username) && !IsNationalIDTaken(conn, transaction, nationalID))
+                        {
+                            username = "fan_" + (firstname.Length > 0 ? char.ToLower(firstname[0]) + firstname.Substring(1) : "") + Math.Abs(Guid.NewGuid().GetHashCode());
+
+                        }
+                        else if (IsNationalIDTaken(conn, transaction, nationalID))
+                        {
+                            label11.Visible = true;
+                            return;
+                        }
+                        else
+                        {
+                            username = "fan_" + (firstname.Length > 0 ? char.ToLower(firstname[0]) + firstname.Substring(1) : "");
+                        }
                         string userQuery = @"INSERT INTO System_Users (Username, Password, UserRole) 
                                  VALUES (@user, @pass, @role);
                                  SELECT SCOPE_IDENTITY();";
 
                         int newUserID;
+
 
                         using (SqlCommand cmd1 = new SqlCommand(userQuery, conn, transaction))
                         {
@@ -83,7 +100,7 @@ namespace AMS_Database_Project
                         using (SqlCommand cmd2 = new SqlCommand(fanQuery, conn, transaction))
                         {
                             cmd2.Parameters.AddWithValue("@id", newUserID);
-                            cmd2.Parameters.AddWithValue("@name", username);
+                            cmd2.Parameters.AddWithValue("@name", firstname + " " + lastname);
                             cmd2.Parameters.AddWithValue("@natID", nationalID);
                             cmd2.Parameters.AddWithValue("@Email", email);
                             cmd2.Parameters.AddWithValue("@Phone", phone);
@@ -93,7 +110,7 @@ namespace AMS_Database_Project
 
                         transaction.Commit();
 
-                        new Login().Show();
+                        new Fan_Username(firstname, username).Show();
                         this.Hide();
                     }
                 }
@@ -101,14 +118,36 @@ namespace AMS_Database_Project
                 {
                     label10.Visible = true;
                 }
+            }
         }
-    }
 
         private void label7_Click(object sender, EventArgs e)
         {
             Login Login = new Login();
             Login.Show();
             this.Hide();
+        }
+
+        private bool IsUsernameTaken(SqlConnection conn, SqlTransaction transaction, string username)
+        {
+            const string query = "SELECT COUNT(*) FROM System_Users WHERE Username = @username";
+            using (SqlCommand cmd = new SqlCommand(query, conn, transaction))
+            {
+                cmd.Parameters.AddWithValue("@username", username);
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+        }
+
+        private bool IsNationalIDTaken(SqlConnection conn, SqlTransaction transaction, string nationalID)
+        {
+            const string query = "SELECT COUNT(*) FROM Fan WHERE National_ID = @natID";
+            using (SqlCommand cmd = new SqlCommand(query, conn, transaction))
+            {
+                cmd.Parameters.AddWithValue("@natID", nationalID);
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
         }
     }
 }

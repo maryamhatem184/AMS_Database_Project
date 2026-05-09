@@ -35,11 +35,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(637, 336);
+            this.button1.Location = new System.Drawing.Point(668, 396);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 47);
+            this.button1.Size = new System.Drawing.Size(120, 42);
             this.button1.TabIndex = 7;
-            this.button1.Text = "Close View";
+            this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -60,8 +60,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.ForeColor = System.Drawing.Color.DarkRed;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "View_Match_Schedules";
-            this.Text = "View_Match_Schedules";
+            this.Text = "View Match Schedules";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

@@ -37,9 +37,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(587, 409);
+            this.button2.ForeColor = System.Drawing.Color.DarkRed;
+            this.button2.Location = new System.Drawing.Point(568, 400);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 29);
+            this.button2.Size = new System.Drawing.Size(112, 38);
             this.button2.TabIndex = 18;
             this.button2.Text = "Close";
             this.button2.UseVisualStyleBackColor = true;
@@ -48,14 +49,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.DarkRed;
             this.label4.Location = new System.Drawing.Point(161, 55);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 16);
+            this.label4.Size = new System.Drawing.Size(101, 16);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Select a Player";
+            this.label4.Text = "Select a Player:";
             // 
             // comboBox1
             // 
+            this.comboBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(384, 52);
             this.comboBox1.Name = "comboBox1";
@@ -82,6 +85,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "View_Player_Medical_History";
             this.Text = "View Player Medical History";
             this.Load += new System.EventHandler(this.View_Player_Medical_History_Load);

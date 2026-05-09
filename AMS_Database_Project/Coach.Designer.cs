@@ -40,7 +40,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(65, 46);
+            this.button1.ForeColor = System.Drawing.Color.DarkRed;
+            this.button1.Location = new System.Drawing.Point(39, 46);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(197, 57);
             this.button1.TabIndex = 0;
@@ -50,7 +51,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(358, 46);
+            this.button2.ForeColor = System.Drawing.Color.DarkRed;
+            this.button2.Location = new System.Drawing.Point(265, 46);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(197, 57);
             this.button2.TabIndex = 1;
@@ -60,7 +62,8 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(65, 172);
+            this.button3.ForeColor = System.Drawing.Color.DarkRed;
+            this.button3.Location = new System.Drawing.Point(39, 172);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(197, 57);
             this.button3.TabIndex = 2;
@@ -70,7 +73,8 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(358, 172);
+            this.button4.ForeColor = System.Drawing.Color.DarkRed;
+            this.button4.Location = new System.Drawing.Point(265, 172);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(197, 57);
             this.button4.TabIndex = 3;
@@ -80,7 +84,8 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(65, 298);
+            this.button5.ForeColor = System.Drawing.Color.DarkRed;
+            this.button5.Location = new System.Drawing.Point(39, 298);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(197, 57);
             this.button5.TabIndex = 4;
@@ -90,7 +95,8 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(358, 298);
+            this.button6.ForeColor = System.Drawing.Color.DarkRed;
+            this.button6.Location = new System.Drawing.Point(265, 298);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(197, 57);
             this.button6.TabIndex = 5;
@@ -100,7 +106,8 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(65, 424);
+            this.button7.ForeColor = System.Drawing.Color.DarkRed;
+            this.button7.Location = new System.Drawing.Point(39, 424);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(197, 57);
             this.button7.TabIndex = 6;
@@ -110,7 +117,8 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(358, 424);
+            this.button8.ForeColor = System.Drawing.Color.DarkRed;
+            this.button8.Location = new System.Drawing.Point(265, 424);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(197, 57);
             this.button8.TabIndex = 7;
@@ -122,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 523);
+            this.ClientSize = new System.Drawing.Size(512, 523);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -131,6 +139,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Coach";
             this.Text = "Coach";
             this.ResumeLayout(false);

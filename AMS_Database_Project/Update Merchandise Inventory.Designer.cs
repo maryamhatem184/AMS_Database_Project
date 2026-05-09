@@ -43,6 +43,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(216, 68);
             this.comboBox1.Name = "comboBox1";
@@ -53,7 +54,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(63, 184);
+            this.dataGridView1.Location = new System.Drawing.Point(63, 185);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -63,6 +64,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
             this.label1.Location = new System.Drawing.Point(60, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 16);
@@ -72,6 +74,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DarkRed;
             this.label2.Location = new System.Drawing.Point(60, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 16);
@@ -80,6 +83,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox1.Location = new System.Drawing.Point(216, 124);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(284, 22);
@@ -88,7 +92,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(478, 340);
+            this.button1.ForeColor = System.Drawing.Color.DarkRed;
+            this.button1.Location = new System.Drawing.Point(270, 355);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 40);
             this.button1.TabIndex = 5;
@@ -98,9 +103,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(63, 340);
+            this.button2.ForeColor = System.Drawing.Color.DarkRed;
+            this.button2.Location = new System.Drawing.Point(553, 409);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 40);
+            this.button2.Size = new System.Drawing.Size(107, 37);
             this.button2.TabIndex = 6;
             this.button2.Text = "Close";
             this.button2.UseVisualStyleBackColor = true;
@@ -108,6 +114,7 @@
             // 
             // button3
             // 
+            this.button3.ForeColor = System.Drawing.Color.DarkRed;
             this.button3.Location = new System.Drawing.Point(506, 124);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(109, 22);
@@ -119,7 +126,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Maroon;
+            this.label3.ForeColor = System.Drawing.Color.DarkRed;
             this.label3.Location = new System.Drawing.Point(213, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(251, 16);
@@ -130,8 +137,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(213, 352);
+            this.label4.ForeColor = System.Drawing.Color.DarkRed;
+            this.label4.Location = new System.Drawing.Point(240, 398);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(206, 16);
             this.label4.TabIndex = 9;
@@ -142,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 408);
+            this.ClientSize = new System.Drawing.Size(672, 458);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button3);
@@ -153,8 +160,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Update_Merchandise_Inventory";
-            this.Text = "Update_Merchandise_Inventory";
+            this.Text = "Update Merchandise Inventory";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
