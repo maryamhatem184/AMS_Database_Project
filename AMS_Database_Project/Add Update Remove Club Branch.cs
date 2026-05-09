@@ -62,6 +62,7 @@ namespace AMS_Database_Project
             label7.Visible = false;
             label11.Visible = false;
             label9.Visible = false;
+            label16.Visible = false;
             if (comboBox2.Text == "")
             {
                 label13.Visible = true;
@@ -69,16 +70,43 @@ namespace AMS_Database_Project
             else
             {
                 Controller controller = new Controller();
-                controller.RemoveBranch(comboBox2.Text);
-                comboBox2.Items.Clear();
-                comboBox1.Items.Clear();
-                DataTable dt = controller.GetAllBranchNames(0);
-                foreach (DataRow dr in dt.Rows)
+                if (controller.RemoveBranch(comboBox2.Text) == 0)
                 {
-                    comboBox1.Items.Add(dr["Name"].ToString());
-                    comboBox2.Items.Add(dr["Name"].ToString());
+                    comboBox2.Items.Clear();
+                    comboBox1.Items.Clear();
+                    comboBox2.Text = "";
+                    comboBox1.Text = "";
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    DataTable dt = controller.GetAllBranchNames(0);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        comboBox1.Items.Add(dr["Name"].ToString());
+                        comboBox2.Items.Add(dr["Name"].ToString());
+                    }
+                    label16.Visible = true;
+                    return;
                 }
-                label15.Visible = true;
+                else
+                {
+                    comboBox2.Items.Clear();
+                    comboBox1.Items.Clear();
+                    comboBox2.Text = "";
+                    comboBox1.Text = "";
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    DataTable dt = controller.GetAllBranchNames(0);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        comboBox1.Items.Add(dr["Name"].ToString());
+                        comboBox2.Items.Add(dr["Name"].ToString());
+                    }
+                    label15.Visible = true;
+                }
             }
         }
 
@@ -90,6 +118,7 @@ namespace AMS_Database_Project
             label7.Visible = false;
             label13.Visible = false;
             label15.Visible = false;
+            label16.Visible = false;
             if (comboBox1.Text == "" || textBox4.Text == "")
             {
                 label11.Visible = true;
@@ -100,6 +129,12 @@ namespace AMS_Database_Project
                 controller.UpdateBranch(comboBox1.Text, Convert.ToInt32(textBox4.Text));
                 comboBox2.Items.Clear();
                 comboBox1.Items.Clear();
+                comboBox2.Text = "";
+                comboBox1.Text = "";
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
                 DataTable dt = controller.GetAllBranchNames(0);
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -118,6 +153,7 @@ namespace AMS_Database_Project
             label9.Visible = false;
             label13.Visible = false;
             label15.Visible = false;
+            label16.Visible = false;
             if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
             {
                 label7.Visible = true;
@@ -128,6 +164,12 @@ namespace AMS_Database_Project
                 controller.CreateBranch(textBox1.Text, textBox2.Text, Convert.ToInt32(textBox3.Text));
                 comboBox2.Items.Clear();
                 comboBox1.Items.Clear();
+                comboBox2.Text = "";
+                comboBox1.Text = "";
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
                 DataTable dt = controller.GetAllBranchNames(0);
                 foreach (DataRow dr in dt.Rows)
                 {

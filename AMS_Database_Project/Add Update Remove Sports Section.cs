@@ -45,6 +45,7 @@ namespace AMS_Database_Project
                 controller.AddSportsSection(textBox1.Text);
                 comboBox2.Items.Clear();
                 comboBox2.Text = "";
+                textBox1.Text = "";
                 DataTable dt = controller.GetAllSportsSectionNames();
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -70,6 +71,7 @@ namespace AMS_Database_Project
                 controller.RemoveSportsSection(comboBox2.Text);
                 comboBox2.Items.Clear();
                 comboBox2.Text = "";
+                textBox1.Text = "";
                 DataTable dt = controller.GetAllSportsSectionNames();
                 foreach (DataRow dr in dt.Rows)
                 {

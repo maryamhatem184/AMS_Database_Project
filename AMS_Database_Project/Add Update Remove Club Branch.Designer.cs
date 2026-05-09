@@ -53,6 +53,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label10
@@ -307,11 +308,23 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.Maroon;
+            this.label16.Location = new System.Drawing.Point(573, 212);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(230, 16);
+            this.label16.TabIndex = 38;
+            this.label16.Text = "Can\'t Delete Branch With Matches in it";
+            this.label16.Visible = false;
+            // 
             // Add_Update_Remove_Club_Branch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 370);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label9);
@@ -372,5 +385,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label16;
     }
 }
