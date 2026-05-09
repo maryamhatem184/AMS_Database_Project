@@ -80,5 +80,17 @@ namespace AMS_Database_Project
             Register_Deactivate_Medical_Staff register_Deactivate_Medical_Staff = new Register_Deactivate_Medical_Staff(managerID);
             register_Deactivate_Medical_Staff.Show();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Activate_Deactivate_Manager Activate_Deactivate_Manager = new Activate_Deactivate_Manager(managerID);
+            Activate_Deactivate_Manager.Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Generate_Reports generate_Reports = new Generate_Reports(managerID);
+            generate_Reports.Show();
+        }
     }
 }

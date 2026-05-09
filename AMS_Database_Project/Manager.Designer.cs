@@ -38,6 +38,8 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -142,7 +144,7 @@
             // button11
             // 
             this.button11.ForeColor = System.Drawing.Color.DarkRed;
-            this.button11.Location = new System.Drawing.Point(302, 363);
+            this.button11.Location = new System.Drawing.Point(302, 442);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(256, 57);
             this.button11.TabIndex = 10;
@@ -150,11 +152,35 @@
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
+            // button10
+            // 
+            this.button10.ForeColor = System.Drawing.Color.DarkRed;
+            this.button10.Location = new System.Drawing.Point(302, 363);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(256, 57);
+            this.button10.TabIndex = 11;
+            this.button10.Text = "Register/Deactivate Manager";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button12
+            // 
+            this.button12.ForeColor = System.Drawing.Color.DarkRed;
+            this.button12.Location = new System.Drawing.Point(18, 442);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(256, 57);
+            this.button12.TabIndex = 12;
+            this.button12.Text = "Generate Reports";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 462);
+            this.ClientSize = new System.Drawing.Size(583, 523);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -184,5 +210,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button12;
     }
 }
