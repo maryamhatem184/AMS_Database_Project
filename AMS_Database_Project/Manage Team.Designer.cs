@@ -45,6 +45,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -205,11 +213,100 @@
             this.label11.Text = "Team Deactivated Successfully";
             this.label11.Visible = false;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.Green;
+            this.label12.Location = new System.Drawing.Point(571, 236);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(145, 16);
+            this.label12.TabIndex = 143;
+            this.label12.Text = "Assignment Successful";
+            this.label12.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Maroon;
+            this.label7.Location = new System.Drawing.Point(577, 236);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(120, 16);
+            this.label7.TabIndex = 142;
+            this.label7.Text = "Please Fill All Data";
+            this.label7.Visible = false;
+            // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.Color.DarkRed;
+            this.button4.Location = new System.Drawing.Point(574, 255);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(121, 42);
+            this.button4.TabIndex = 141;
+            this.button4.Text = "Assign";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.ForeColor = System.Drawing.Color.DarkRed;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(641, 112);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(138, 24);
+            this.comboBox3.TabIndex = 140;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.DarkRed;
+            this.label13.Location = new System.Drawing.Point(530, 115);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(87, 16);
+            this.label13.TabIndex = 139;
+            this.label13.Text = "Select Team:";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.ForeColor = System.Drawing.Color.DarkRed;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(641, 80);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(138, 24);
+            this.comboBox4.TabIndex = 138;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.DarkRed;
+            this.label14.Location = new System.Drawing.Point(530, 83);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(90, 16);
+            this.label14.TabIndex = 137;
+            this.label14.Text = "Select Coach:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.DarkRed;
+            this.label15.Location = new System.Drawing.Point(530, 34);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(146, 16);
+            this.label15.TabIndex = 136;
+            this.label15.Text = "Assign Coach to Team:";
+            // 
             // Manage_Team
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 382);
+            this.ClientSize = new System.Drawing.Size(1117, 382);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -254,5 +351,13 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
     }
 }
