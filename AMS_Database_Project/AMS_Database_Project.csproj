@@ -143,6 +143,12 @@
     <Compile Include="Monitor Player Performance.Designer.cs">
       <DependentUpon>Monitor Player Performance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase.Designer.cs">
+      <DependentUpon>Purchase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Record Player Injury.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Monitor Player Performance.resx">
       <DependentUpon>Monitor Player Performance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase.resx">
+      <DependentUpon>Purchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Record Player Injury.resx">
       <DependentUpon>Record Player Injury.cs</DependentUpon>
