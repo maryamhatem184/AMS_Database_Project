@@ -20,12 +20,18 @@ namespace AMS_Database_Project
             DataTable dt = controller.GetAllCoachNames();
             foreach (DataRow dr in dt.Rows)
             {
-                comboBox1.Items.Add(dr["Name"].ToString());
+                comboBox4.Items.Add(dr["Name"].ToString());
             }
             dt = controller.GetAllTeamsNames();
             foreach (DataRow dr in dt.Rows)
             {
+                comboBox3.Items.Add(dr["Name"].ToString());
                 comboBox2.Items.Add(dr["Name"].ToString());
+            }
+            dt = controller.GetAllSportsSectionNames();
+            foreach (DataRow dr in dt.Rows)
+            {
+                comboBox1.Items.Add(dr["Name"].ToString());
             }
         }
 
@@ -40,12 +46,20 @@ namespace AMS_Database_Project
             label9.Visible = false;
             label10.Visible = false;
             label11.Visible = false;
+            label12.Visible = false;
+            label7.Visible = false;
             Controller controller = new Controller();
             if (textBox1.Text != "" && comboBox1.Text != "" && textBox2.Text != "")
             {
                 controller.RegisterTeam(textBox1.Text, textBox2.Text, comboBox1.Text);
                 comboBox1.Items.Clear();
                 comboBox2.Items.Clear();
+                comboBox3.Items.Clear();
+                comboBox4.Items.Clear();
+                comboBox1.Text = "";
+                comboBox2.Text = "";
+                comboBox3.Text = "";
+                comboBox4.Text = "";
                 textBox1.Text = "";
                 textBox2.Text = "";
                 DataTable dt = controller.GetAllSportsSectionNames();
@@ -56,7 +70,13 @@ namespace AMS_Database_Project
                 dt = controller.GetAllTeamsNames();
                 foreach (DataRow dr in dt.Rows)
                 {
+                    comboBox3.Items.Add(dr["Name"].ToString());
                     comboBox2.Items.Add(dr["Name"].ToString());
+                }
+                dt = controller.GetAllCoachNames();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    comboBox4.Items.Add(dr["Name"].ToString());
                 }
                 label9.Visible = true;
             }
@@ -72,12 +92,20 @@ namespace AMS_Database_Project
             label9.Visible = false;
             label10.Visible = false;
             label11.Visible = false;
+            label12.Visible = false;
+            label7.Visible = false;
             Controller controller = new Controller();
             if (comboBox2.Text != "")
             {
                 controller.DeactivateTeam(comboBox2.Text);
                 comboBox1.Items.Clear();
                 comboBox2.Items.Clear();
+                comboBox3.Items.Clear();
+                comboBox4.Items.Clear();
+                comboBox1.Text = "";
+                comboBox2.Text = "";
+                comboBox3.Text = "";
+                comboBox4.Text = "";
                 textBox1.Text = "";
                 textBox2.Text = "";
                 DataTable dt = controller.GetAllSportsSectionNames();
@@ -88,7 +116,13 @@ namespace AMS_Database_Project
                 dt = controller.GetAllTeamsNames();
                 foreach (DataRow dr in dt.Rows)
                 {
+                    comboBox3.Items.Add(dr["Name"].ToString());
                     comboBox2.Items.Add(dr["Name"].ToString());
+                }
+                dt = controller.GetAllCoachNames();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    comboBox4.Items.Add(dr["Name"].ToString());
                 }
                 label11.Visible = true;
             }
@@ -100,39 +134,45 @@ namespace AMS_Database_Project
 
         private void button4_Click(object sender, EventArgs e)
         {
-            label7.Visible = false;
             label8.Visible = false;
-            label15.Visible = false;
-            label13.Visible = false;
+            label9.Visible = false;
+            label10.Visible = false;
             label11.Visible = false;
             label12.Visible = false;
-            if (comboBox3.Text == "" || comboBox1.Text == "")
+            label7.Visible = false;
+            if (comboBox3.Text == "" || comboBox4.Text == "")
             {
-                label11.Visible = true;
+                label7.Visible = true;
             }
             else
             {
                 Controller controller = new Controller();
-                controller.AssignCoachToTeam(controller.GetCoachIDByName(comboBox1.Text), controller.GetTeamIDByName(comboBox3.Text));
+                controller.AssignCoachToTeam(controller.GetCoachIDByName(comboBox4.Text), controller.GetTeamIDByName(comboBox3.Text));
+                comboBox1.Items.Clear();
                 comboBox2.Items.Clear();
                 comboBox3.Items.Clear();
-                comboBox1.Items.Clear();
-                comboBox3.Text = "";
+                comboBox4.Items.Clear();
                 comboBox1.Text = "";
                 comboBox2.Text = "";
+                comboBox3.Text = "";
+                comboBox4.Text = "";
                 textBox1.Text = "";
                 textBox2.Text = "";
-                DataTable dt = controller.GetAllCoachNames();
-                comboBox2.Items.Clear();
+                DataTable dt = controller.GetAllSportsSectionNames();
                 foreach (DataRow dr in dt.Rows)
                 {
-                    comboBox2.Items.Add(dr["Name"].ToString());
                     comboBox1.Items.Add(dr["Name"].ToString());
                 }
-                dt = controller.GetAllTeamNames(0);
+                dt = controller.GetAllTeamsNames();
                 foreach (DataRow dr in dt.Rows)
                 {
                     comboBox3.Items.Add(dr["Name"].ToString());
+                    comboBox2.Items.Add(dr["Name"].ToString());
+                }
+                dt = controller.GetAllCoachNames();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    comboBox4.Items.Add(dr["Name"].ToString());
                 }
                 label12.Visible = true;
             }
