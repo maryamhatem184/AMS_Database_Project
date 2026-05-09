@@ -43,6 +43,10 @@ namespace AMS_Database_Project
             {
                 Controller controller = new Controller();
                 controller.RegisterMedicalStaff(textBox2.Text, textBox1.Text);
+                comboBox2.Items.Clear();
+                comboBox2.Text = "";
+                textBox1.Text = "";
+                textBox2.Text = "";
                 DataTable dt = controller.GetAllMedicalStaffNames();
                 comboBox2.Items.Clear();
                 foreach (DataRow dr in dt.Rows)
@@ -67,6 +71,10 @@ namespace AMS_Database_Project
             {
                 Controller controller = new Controller();
                 controller.DeactivateMedicalStaff(comboBox2.Text);
+                comboBox2.Items.Clear();
+                comboBox2.Text = "";
+                textBox1.Text = "";
+                textBox2.Text = "";
                 DataTable dt = controller.GetAllMedicalStaffNames();
                 comboBox2.Items.Clear();
                 foreach (DataRow dr in dt.Rows)

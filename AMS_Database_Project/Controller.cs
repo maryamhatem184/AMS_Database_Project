@@ -284,5 +284,64 @@ namespace DBapplication
             string query = "DELETE FROM Team WHERE Name = '" + Name + "'";
             return dbMan.ExecuteNonQuery(query);
         }
+        public DataTable GetAllManagerNames()
+        {
+            string query = "SELECT Name FROM Manager";
+            return dbMan.ExecuteReader(query);
+        }
+        public int RegisterManager(string Name, string Role)
+        {
+            string query = "INSERT INTO System_Users (Username, Password, UserRole) VALUES ('manager_" + Name + "', 'ahly2026', 'Manager'); INSERT INTO Manager (Manager_ID, Name, Role) VALUES (SCOPE_IDENTITY(), '" + Name + "', '" + Role + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int DeactivateManager(string Name)
+        {
+            string query = "DELETE FROM System_Users WHERE UserID = (SELECT Manager_ID FROM Manager WHERE Name = '" + Name + "'); DELETE FROM Manager WHERE Name = '" + Name + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int GetBranchIDByName(string BranchName)
+        {
+            string query = "SELECT Branch_ID FROM Branch WHERE Name = '" + BranchName + "'";
+            object result = dbMan.ExecuteScalar(query);
+            if (result != null && result != DBNull.Value)
+                return Convert.ToInt32(result);
+            else
+                return -1;
+        }
+        public int GetManagerIDByName(string ManagerName)
+        {
+            string query = "SELECT Manager_ID FROM Manager WHERE Name = '" + ManagerName + "'";
+            object result = dbMan.ExecuteScalar(query);
+            if (result != null && result != DBNull.Value)
+                return Convert.ToInt32(result);
+            else
+                return -1;
+        }
+        public int AssignManagerToBranch(int ManagerID, int BranchID)
+        {
+            string query = "UPDATE Manager SET Branch_ID = " + BranchID + " WHERE Manager_ID = " + ManagerID;
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable GetTopScorers()
+        {
+            return dbMan.ExecuteReader("EXEC GetTopScorers;");
+        }
+        public DataTable GetMostBookedMatches()
+        {
+            return dbMan.ExecuteReader("EXEC GetMostBookedMatches;");
+        }
+        public DataTable GetTopSellingProducts()
+        {
+            string query = @"SELECT M.Name, SUM(C.Quantity) AS Total_Items_Sold 
+                             FROM Merchandise_Item M 
+                             JOIN contain C ON M.Merchandise_ID = C.Merchandise_ID 
+                             GROUP BY M.Name 
+                             ORDER BY Total_Items_Sold DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable GetManagerialStats()
+        {
+            return dbMan.ExecuteReader("EXEC GetManagerialStats;");
+        }
     }
 }
