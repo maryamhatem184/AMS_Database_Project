@@ -55,11 +55,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 132);
+            this.label2.Location = new System.Drawing.Point(37, 132);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 16);
+            this.label2.Size = new System.Drawing.Size(94, 16);
             this.label2.TabIndex = 95;
-            this.label2.Text = "Role:";
+            this.label2.Text = "Specialization:";
             // 
             // button4
             // 
@@ -155,7 +155,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(62, 91);
+            this.label4.Location = new System.Drawing.Point(37, 91);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 16);
             this.label4.TabIndex = 85;

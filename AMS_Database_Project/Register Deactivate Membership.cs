@@ -49,7 +49,7 @@ namespace AMS_Database_Project
                 comboBox1.Items.Clear();
                 comboBox2.Items.Clear();
                 Controller controller = new Controller();
-                controller.RegisterMembership(controller.GetFanIDByName(comboBox1.Text), comboBox2.Text, dateTimePicker1.Value.ToString("yyyy-MM-dd"), dateTimePicker2.Value.ToString("yyyy-MM-dd"));
+                controller.RegisterMembership(controller.GetFanIDByName(comboBox1.Text), textBox2.Text, dateTimePicker1.Value.ToString("yyyy-MM-dd"), dateTimePicker2.Value.ToString("yyyy-MM-dd"));
                 DataTable dt = controller.GetAllFansNames();
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -72,13 +72,12 @@ namespace AMS_Database_Project
             label13.Visible = false;
             label7.Visible = false;
             label8.Visible = false;
-            if (comboBox1.SelectedItem != null)
+            if (comboBox2.SelectedItem != null)
             {
                 comboBox1.Items.Clear();
                 comboBox2.Items.Clear();
-                string selectedFan = comboBox1.SelectedItem.ToString();
                 Controller controller = new Controller();
-                controller.DeactivateMembership(controller.GetFanIDByName(comboBox1.Text));
+                controller.DeactivateMembership(controller.GetFanIDByName(comboBox2.Text));
                 DataTable dt = controller.GetAllFansNames();
                 foreach (DataRow dr in dt.Rows)
                 {

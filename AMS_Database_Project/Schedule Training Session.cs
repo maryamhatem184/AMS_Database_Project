@@ -61,7 +61,7 @@ namespace AMS_Database_Project
             if (comboBox1.Text != "" && comboBox2.Text != "" && comboBox3.Text != "" && comboBox4.Text != "")
             {
                 Controller controller = new Controller();
-                if (controller.ScheduleTrainingSession(controller.GetNumberOfMatches() + 501, dateTimePicker1.Value.ToString("yyyy-MM-dd"), comboBox1.Text, comboBox2.Text, controller.GetBranchID(comboBox3.Text), controller.GetTeamID(comboBox4.Text)) > 0)
+                if (controller.ScheduleTrainingSession(dateTimePicker1.Value.ToString("yyyy-MM-dd"), comboBox1.Text, comboBox2.Text, controller.GetBranchID(comboBox3.Text), controller.GetTeamID(comboBox4.Text)) > 0)
                 {
                     label8.Visible = true;
                 }

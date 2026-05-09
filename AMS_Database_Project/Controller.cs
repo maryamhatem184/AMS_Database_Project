@@ -37,7 +37,7 @@ namespace DBapplication
         }
         public DataTable ShowAllPlayersPerformances(int ID)
         {
-            string query = "SELECT p.Name AS Player_Name, t.Name AS Team_Name, m.Date, m.Opponent, pp.Assists, pp.Goals, pp.Rating FROM Player_Performance pp JOIN Player p ON p.Player_ID = pp.Player_ID JOIN Team t ON t.Team_ID = p.Team_ID JOIN \"Match\" m ON m.Match_ID = pp.Match_ID JOIN Coach c ON c.Coach_ID = t.Coach_ID WHERE c.Coach_ID = " + ID;
+            string query = "SELECT p.Name AS Player_Name, t.Name AS Team_Name, m.Date, m.Opponent, pp.Assists, pp.Goals, pp.Rating FROM Performance pp JOIN Player p ON p.Player_ID = pp.Player_ID JOIN Team t ON t.Team_ID = p.Team_ID JOIN \"Match\" m ON m.Match_ID = pp.Match_ID JOIN Coach c ON c.Coach_ID = t.Coach_ID WHERE c.Coach_ID = " + ID;
             return dbMan.ExecuteReader(query);
         }
         public DataTable ShowAllPlayersAvailability(int ID)
@@ -64,9 +64,9 @@ namespace DBapplication
             else
                 return 0;
         }
-        public int ScheduleTrainingSession(int MatchID, string date, string hour, string minute, int BranchID, int teamID)
+        public int ScheduleTrainingSession(string date, string hour, string minute, int BranchID, int teamID)
         {
-            string query = "INSERT INTO dbo.\"Match\"(Match_ID, \"Date\", \"time\", Opponent, Branch_ID, Team_ID) VALUES (" + MatchID + ", '" + date + "', '" + hour + ":" + minute + ":00', NULL, " + BranchID + ", " + teamID + ")";
+            string query = "INSERT INTO dbo.\"Match\"(\"Date\", \"time\", Opponent, Branch_ID, Team_ID) VALUES ('" + date + "', '" + hour + ":" + minute + ":00', NULL, " + BranchID + ", " + teamID + ")";
             return dbMan.ExecuteNonQuery(query);
         }
         public int GetBranchID(string BranchName)
@@ -87,9 +87,9 @@ namespace DBapplication
             else
                 return -1;
         }
-        public int ScheduleMatch(int MatchID, string date, string hour, string minute, string Opponent, int BranchID, int teamID)
+        public int ScheduleMatch(string date, string hour, string minute, string Opponent, int BranchID, int teamID)
         {
-            string query = "INSERT INTO dbo.\"Match\"(Match_ID, \"Date\", \"time\", Opponent, Branch_ID, Team_ID) VALUES (" + MatchID + ", '" + date + "', '" + hour + ":" + minute + ":00', '" + Opponent + "', " + BranchID + ", " + teamID + ")";
+            string query = "INSERT INTO dbo.\"Match\"(\"Date\", \"time\", Opponent, Branch_ID, Team_ID) VALUES ('" + date + "', '" + hour + ":" + minute + ":00', '" + Opponent + "', " + BranchID + ", " + teamID + ")";
             return dbMan.ExecuteNonQuery(query);
         }
         public DataTable ShowAllMatchesInfo(int ID)
@@ -99,32 +99,32 @@ namespace DBapplication
         }
         public DataTable ShowAllPlayersForMatch(int MatchID)
         {
-            string query = "SELECT p.Name AS Player_Name, p.Position FROM Player p JOIN Team t ON p.Team_ID = t.Team_ID JOIN \"Match\" m ON m.Team_ID = t.Team_ID WHERE m.Match_ID = " + MatchID + " AND p.Name NOT IN (SELECT p.Name AS Player_Name FROM Player_Performance pp JOIN Player ON pp.Player_ID = p.Player_ID WHERE Match_ID = " + MatchID + ")";
+            string query = "SELECT p.Name AS Player_Name, p.Position FROM Player p JOIN Team t ON p.Team_ID = t.Team_ID JOIN \"Match\" m ON m.Team_ID = t.Team_ID WHERE m.Match_ID = " + MatchID + " AND p.Name NOT IN (SELECT p.Name AS Player_Name FROM Performance pp JOIN Player ON pp.Player_ID = p.Player_ID WHERE Match_ID = " + MatchID + ")";
             return dbMan.ExecuteReader(query);
         }
         public int AddPlayerToMatch(int MatchID, string PlayerName)
         {
-            string query = "INSERT INTO Player_Performance (Performance_ID, Player_ID, Match_ID) VALUES (((SELECT Count(*) FROM Player_Performance) + 1),(SELECT Player_ID FROM Player WHERE Name = '" + PlayerName + "'), " + MatchID + ")";
+            string query = "INSERT INTO Performance (Player_ID, Match_ID) VALUES ((SELECT Player_ID FROM Player WHERE Name = '" + PlayerName + "'), " + MatchID + ")";
             return dbMan.ExecuteNonQuery(query);
         }
         public DataTable ShowAllSelectedPlayersForMatch(int MatchID)
         {
-            string query = "SELECT p.Name AS Player_Name, p.Position FROM Player p JOIN Player_Performance pp ON p.Player_ID = pp.Player_ID WHERE pp.Match_ID = " + MatchID;
+            string query = "SELECT p.Name AS Player_Name, p.Position FROM Player p JOIN Performance pp ON p.Player_ID = pp.Player_ID WHERE pp.Match_ID = " + MatchID;
             return dbMan.ExecuteReader(query);
         }
         public int RemovePlayerFromMatch(int MatchID, string PlayerName)
         {
-            string query = "DELETE FROM Player_Performance WHERE Match_ID = " + MatchID + " AND Player_ID = (SELECT Player_ID FROM Player WHERE Name = '" + PlayerName + "')";
+            string query = "DELETE FROM Performance WHERE Match_ID = " + MatchID + " AND Player_ID = (SELECT Player_ID FROM Player WHERE Name = '" + PlayerName + "')";
             return dbMan.ExecuteNonQuery(query);
         }
         public DataTable GetPlayerPerformanceForMatch(int MatchID, int ID)
         {
-            string query = "SELECT p.Name AS Player_Name, pp.Assists, pp.Goals, pp.Rating FROM Player_Performance pp JOIN Player p ON p.Player_ID = pp.Player_ID WHERE pp.Match_ID = " + MatchID + " AND p.Player_ID = " + ID;
+            string query = "SELECT p.Name AS Player_Name, pp.Assists, pp.Goals, pp.Rating FROM Performance pp JOIN Player p ON p.Player_ID = pp.Player_ID WHERE pp.Match_ID = " + MatchID + " AND p.Player_ID = " + ID;
             return dbMan.ExecuteReader(query);
         }
         public int UpdatePlayerPerformanceForMatch(int MatchID, int ID, int Assists, int Goals, int RatingNumber, int RatingDecimal)
         {
-            string query = "UPDATE Player_Performance SET Assists = " + Assists + ", Goals = " + Goals + ", Rating = " + RatingNumber + "." + RatingDecimal + " WHERE Match_ID = " + MatchID + " AND Player_ID = " + ID;
+            string query = "UPDATE Performance SET Assists = " + Assists + ", Goals = " + Goals + ", Rating = " + RatingNumber + "." + RatingDecimal + " WHERE Match_ID = " + MatchID + " AND Player_ID = " + ID;
             return dbMan.ExecuteNonQuery(query);
         }
         public int GetPlayerID(string PlayerName)
@@ -138,12 +138,12 @@ namespace DBapplication
         }
         public DataTable ShowAllPlayersForMatchWithPerformance(int MatchID)
         {
-            string query = "SELECT p.Name AS Player_Name, pp.Assists, pp.Goals, pp.Rating FROM Player p JOIN Player_Performance pp ON p.Player_ID = pp.Player_ID WHERE pp.Match_ID = " + MatchID;
+            string query = "SELECT p.Name AS Player_Name, pp.Assists, pp.Goals, pp.Rating FROM Player p JOIN Performance pp ON p.Player_ID = pp.Player_ID WHERE pp.Match_ID = " + MatchID;
             return dbMan.ExecuteReader(query);
         }
         public DataTable ShowAllPlayersPerformances()
         {
-            string query = "SELECT p.Name AS Player_Name, t.Name AS Team_Name, m.Date, pp.Assists, pp.Goals, pp.Rating FROM Player p JOIN Team t ON p.Team_ID = t.Team_ID JOIN Player_Performance pp ON p.Player_ID = pp.Player_ID JOIN \"Match\" m ON pp.Match_ID = m.Match_ID WHERE pp.Rating IS NOT NULL";
+            string query = "SELECT p.Name AS Player_Name, t.Name AS Team_Name, m.Date, pp.Assists, pp.Goals, pp.Rating FROM Player p JOIN Team t ON p.Team_ID = t.Team_ID JOIN Performance pp ON p.Player_ID = pp.Player_ID JOIN \"Match\" m ON pp.Match_ID = m.Match_ID";
             return dbMan.ExecuteReader(query);
         }
         public DataTable GetAllMerchandiseNames()
@@ -246,12 +246,27 @@ namespace DBapplication
         }
         public int RegisterMedicalStaff(string Name, string Role)
         {
-            string query = "INSERT INTO Medical_Staff (Name, Role) VALUES ('" + Name + "', '" + Role + "')";
+            string query = "INSERT INTO System_Users (Username, Password, UserRole) VALUES ('dr_" + Name + "', 'ahly2026', 'Medical'); INSERT INTO Medical_Staff (Medical_ID, Name, Role) VALUES (SCOPE_IDENTITY(), 'Dr. " + Name + "', '" + Role + "');";
             return dbMan.ExecuteNonQuery(query);
         }
         public int DeactivateMedicalStaff(string Name)
         {
-            string query = "DELETE FROM Medical_Staff WHERE Name = '" + Name + "'";
+            string query = "DELETE FROM System_Users WHERE UserID = (SELECT Medical_ID FROM Medical_Staff WHERE Name = '" + Name + "'); DELETE FROM Medical_Staff WHERE Name = '" + Name + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable GetAllCoachNames()
+        {
+            string query = "SELECT Name FROM Coach";
+            return dbMan.ExecuteReader(query);
+        }
+        public int RegisterCoach(string Name, string Specialization)
+        {
+            string query = "INSERT INTO System_Users (Username, Password, UserRole) VALUES ('coach_" + Name + "', 'ahly2026', 'Coach'); INSERT INTO Coach (Coach_ID, Name, Specialization) VALUES (SCOPE_IDENTITY(), '" + Name + "', '" + Specialization + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int DeactivateCoach(string Name)
+        {
+            string query = "DELETE FROM System_Users WHERE UserID = (SELECT Coach_ID FROM Coach WHERE Name = '" + Name + "'); DELETE FROM Coach WHERE Name = '" + Name + "';";
             return dbMan.ExecuteNonQuery(query);
         }
     }

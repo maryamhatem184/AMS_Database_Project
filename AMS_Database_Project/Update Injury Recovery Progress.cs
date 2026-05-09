@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 
 namespace AMS_Database_Project
 {
+
     public partial class Update_Injury_Recovery_Progress : Form
     {
 
@@ -18,6 +19,7 @@ namespace AMS_Database_Project
 
         public Update_Injury_Recovery_Progress(int ID)
         {
+
             InitializeComponent();
             medicalID = ID;
             FillPlayerComboBox();
@@ -58,22 +60,26 @@ namespace AMS_Database_Project
 
         private void FillInjuryComboBox()
         {
-            
+            if (comboBox1.SelectedValue == null) return;
+
             string connString = @"Data Source=.;Initial Catalog=""Database project - AMS"";Integrated Security=True;";
-            string query = "SELECT Injury_ID,Injury FROM Injury_Record WHERE Player_ID =" + comboBox1.SelectedValue;
+            string query = "SELECT Injury_ID,Injury FROM Injury_Record WHERE Player_ID = @PlayerID";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 try
                 {
-                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    comboBox2.DataSource = null;
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@PlayerID", Convert.ToInt32(comboBox1.SelectedValue));
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    comboBox2.DataSource = dt;
                     comboBox2.DisplayMember = "Injury";
                     comboBox2.ValueMember = "Injury_ID";
-
+                    comboBox2.DataSource = dt;
 
                 }
                 catch (Exception ex)
@@ -96,8 +102,8 @@ namespace AMS_Database_Project
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@RecoveryStatus", textBox2.Text);
                     cmd.Parameters.AddWithValue("@ExpectedReturnDate", dateTimePicker1.Value);
-                    cmd.Parameters.AddWithValue("@InjuryID", comboBox2.SelectedValue);
-                    cmd.Parameters.AddWithValue("@PlayerID", comboBox1.SelectedValue);
+                    cmd.Parameters.AddWithValue("@InjuryID", Convert.ToInt32(comboBox2.SelectedValue));
+                    cmd.Parameters.AddWithValue("@PlayerID", Convert.ToInt32(comboBox1.SelectedValue));
 
                     if (comboBox1.SelectedValue == null || comboBox2.SelectedValue == null || string.IsNullOrWhiteSpace(textBox2.Text) || dateTimePicker1.Value == null)
                     {
@@ -122,11 +128,12 @@ namespace AMS_Database_Project
                         label5.Visible = true;
                         label6.Visible = false;
                         label7.Visible = false;
+                        textBox1.Text = textBox2.Text;
                     }
                     else
                     {
                         label6.Visible = true;
-                        label5.Visible = false; 
+                        label5.Visible = false;
                         label7.Visible = false;
                     }
                 }
@@ -163,19 +170,26 @@ namespace AMS_Database_Project
                 }
                 catch (Exception)
                 {
-                    
+                    MessageBox.Show("Error loading injury details.");
+
+
                 }
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillInjuryComboBox();
+            if (comboBox2.SelectedValue == null)
+            {
+                textBox1.Text = "";
+            }
         }
     }
 }

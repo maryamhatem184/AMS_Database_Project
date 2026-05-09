@@ -88,11 +88,16 @@ namespace AMS_Database_Project
             comboBox8.SelectedIndex = comboBox2.SelectedIndex;
             Controller controller = new Controller();
             DataTable performance = controller.GetPlayerPerformanceForMatch(Convert.ToInt32(comboBox7.Text), Convert.ToInt32(comboBox8.Text));
-            if (performance.Rows.Count > 0)
+            if (performance != null && performance.Rows.Count > 0)
             {
                 DataRow dr = performance.Rows[0];
                 comboBox4.Text = dr["Goals"].ToString();
                 comboBox5.Text = dr["Assists"].ToString();
+            }
+            else
+            {
+                comboBox4.SelectedIndex = 0;
+                comboBox5.SelectedIndex = 0;
             }
         }
 
@@ -104,9 +109,7 @@ namespace AMS_Database_Project
                 comboBox3.Enabled = false;
             }
             else
-            {
                 comboBox3.Enabled = true;
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
