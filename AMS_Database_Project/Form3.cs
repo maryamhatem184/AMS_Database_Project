@@ -8,7 +8,7 @@ namespace AMS_Database_Project
     {
         MatchController matchController = new MatchController();
 
-        public Form3()
+        public Form3(int fanID)
         {
             InitializeComponent();
         }
