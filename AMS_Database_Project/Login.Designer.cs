@@ -39,6 +39,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -96,7 +97,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkRed;
-            this.label3.Location = new System.Drawing.Point(196, 257);
+            this.label3.Location = new System.Drawing.Point(196, 262);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(252, 25);
             this.label3.TabIndex = 10;
@@ -106,7 +107,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Green;
-            this.label4.Location = new System.Drawing.Point(517, 264);
+            this.label4.Location = new System.Drawing.Point(517, 269);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 16);
             this.label4.TabIndex = 11;
@@ -161,11 +162,23 @@
             this.label6.Text = "This Person Does Not Exist.";
             this.label6.Visible = false;
             // 
+            // button3
+            // 
+            this.button3.ForeColor = System.Drawing.Color.DarkRed;
+            this.button3.Location = new System.Drawing.Point(478, 198);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(130, 29);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Show Password";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 489);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label9);
@@ -198,5 +211,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button3;
     }
 }

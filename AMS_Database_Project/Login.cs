@@ -128,5 +128,19 @@ namespace AMS_Database_Project
                 }
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox2.UseSystemPasswordChar = !textBox2.UseSystemPasswordChar;
+
+            if (textBox2.UseSystemPasswordChar)
+            {
+                button3.Text = "Show Password";
+            }
+            else
+            {
+                button3.Text = "Hide Password";
+            }
+        }
     }
 }
