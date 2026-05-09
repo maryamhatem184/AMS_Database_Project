@@ -140,7 +140,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Green;
-            this.label11.Location = new System.Drawing.Point(334, 263);
+            this.label11.Location = new System.Drawing.Point(355, 263);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(174, 16);
             this.label11.TabIndex = 160;
@@ -151,7 +151,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.Maroon;
-            this.label10.Location = new System.Drawing.Point(334, 263);
+            this.label10.Location = new System.Drawing.Point(348, 263);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(181, 16);
             this.label10.TabIndex = 159;
@@ -338,7 +338,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Manage_Contracts";
-            this.Text = "Manage_Contracts";
+            this.Text = "Manage Contracts";
             this.ResumeLayout(false);
             this.PerformLayout();
 

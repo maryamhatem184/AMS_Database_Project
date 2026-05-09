@@ -61,6 +61,7 @@
             this.ClientSize = new System.Drawing.Size(800, 442);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Monitor_ALL_Players_Performances";
             this.Text = "Monitor All Players Performances";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
