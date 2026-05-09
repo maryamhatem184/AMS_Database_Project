@@ -82,7 +82,7 @@
             // button4
             // 
             this.button4.ForeColor = System.Drawing.Color.DarkRed;
-            this.button4.Location = new System.Drawing.Point(797, 254);
+            this.button4.Location = new System.Drawing.Point(844, 254);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 33);
             this.button4.TabIndex = 124;
@@ -94,7 +94,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.Green;
-            this.label15.Location = new System.Drawing.Point(355, 171);
+            this.label15.Location = new System.Drawing.Point(403, 171);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(179, 16);
             this.label15.TabIndex = 123;
@@ -116,7 +116,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.Maroon;
-            this.label13.Location = new System.Drawing.Point(370, 171);
+            this.label13.Location = new System.Drawing.Point(418, 171);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(157, 16);
             this.label13.TabIndex = 121;
@@ -126,7 +126,7 @@
             // button3
             // 
             this.button3.ForeColor = System.Drawing.Color.DarkRed;
-            this.button3.Location = new System.Drawing.Point(388, 201);
+            this.button3.Location = new System.Drawing.Point(436, 201);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 33);
             this.button3.TabIndex = 120;
@@ -149,7 +149,7 @@
             // 
             this.comboBox2.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(462, 81);
+            this.comboBox2.Location = new System.Drawing.Point(466, 81);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(138, 24);
             this.comboBox2.TabIndex = 118;
@@ -238,7 +238,7 @@
             // 
             this.comboBox3.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(756, 110);
+            this.comboBox3.Location = new System.Drawing.Point(756, 117);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(138, 24);
             this.comboBox3.TabIndex = 132;
@@ -247,7 +247,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.DarkRed;
-            this.label9.Location = new System.Drawing.Point(645, 113);
+            this.label9.Location = new System.Drawing.Point(645, 120);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 16);
             this.label9.TabIndex = 131;
@@ -290,7 +290,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 299);
+            this.ClientSize = new System.Drawing.Size(953, 299);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button2);
@@ -314,8 +314,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Activate_Deactivate_Manager";
-            this.Text = "Activate_Deactivate_Manager";
+            this.Text = "Activate/Deactivate Manager";
             this.ResumeLayout(false);
             this.PerformLayout();
 

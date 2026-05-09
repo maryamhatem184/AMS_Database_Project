@@ -49,13 +49,15 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 24);
+            this.textBox1.ForeColor = System.Drawing.Color.DarkRed;
+            this.textBox1.Location = new System.Drawing.Point(113, 30);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
+            this.textBox2.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox2.Location = new System.Drawing.Point(113, 81);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 22);
@@ -63,6 +65,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox3.Location = new System.Drawing.Point(113, 128);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 22);
@@ -70,6 +73,7 @@
             // 
             // textBox4
             // 
+            this.textBox4.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox4.Location = new System.Drawing.Point(113, 175);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 22);
@@ -78,7 +82,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 30);
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
+            this.label1.Location = new System.Drawing.Point(16, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 16);
             this.label1.TabIndex = 4;
@@ -87,6 +92,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DarkRed;
             this.label2.Location = new System.Drawing.Point(16, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 16);
@@ -96,6 +102,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.DarkRed;
             this.label3.Location = new System.Drawing.Point(16, 134);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 16);
@@ -105,6 +112,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.DarkRed;
             this.label4.Location = new System.Drawing.Point(16, 181);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 16);
@@ -113,6 +121,7 @@
             // 
             // button1
             // 
+            this.button1.ForeColor = System.Drawing.Color.DarkRed;
             this.button1.Location = new System.Drawing.Point(19, 236);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(194, 30);
@@ -123,6 +132,7 @@
             // 
             // button2
             // 
+            this.button2.ForeColor = System.Drawing.Color.DarkRed;
             this.button2.Location = new System.Drawing.Point(19, 291);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(194, 30);
@@ -133,6 +143,7 @@
             // 
             // button3
             // 
+            this.button3.ForeColor = System.Drawing.Color.DarkRed;
             this.button3.Location = new System.Drawing.Point(19, 345);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(194, 33);
@@ -143,6 +154,7 @@
             // 
             // button4
             // 
+            this.button4.ForeColor = System.Drawing.Color.DarkRed;
             this.button4.Location = new System.Drawing.Point(19, 399);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(194, 30);
@@ -179,8 +191,9 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form4";
-            this.Text = "Form4";
+            this.Text = "Booking";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();

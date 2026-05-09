@@ -217,6 +217,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Register_Deactivate_Medical_Staff";
             this.Text = "Register/Deactivate Medical Staff";
             this.ResumeLayout(false);

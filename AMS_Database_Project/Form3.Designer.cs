@@ -48,6 +48,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox1.Location = new System.Drawing.Point(112, 25);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
@@ -55,6 +56,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox2.Location = new System.Drawing.Point(112, 69);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 22);
@@ -62,6 +64,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox3.Location = new System.Drawing.Point(112, 111);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 22);
@@ -69,6 +72,7 @@
             // 
             // textBox4
             // 
+            this.textBox4.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox4.Location = new System.Drawing.Point(112, 162);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 22);
@@ -76,6 +80,7 @@
             // 
             // textBox5
             // 
+            this.textBox5.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox5.Location = new System.Drawing.Point(112, 209);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 22);
@@ -84,6 +89,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
             this.label1.Location = new System.Drawing.Point(24, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 16);
@@ -93,6 +99,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DarkRed;
             this.label2.Location = new System.Drawing.Point(24, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 16);
@@ -102,6 +109,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.DarkRed;
             this.label3.Location = new System.Drawing.Point(24, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 16);
@@ -111,6 +119,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.DarkRed;
             this.label4.Location = new System.Drawing.Point(24, 162);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 16);
@@ -120,6 +129,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.DarkRed;
             this.label5.Location = new System.Drawing.Point(24, 215);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 16);
@@ -128,6 +138,7 @@
             // 
             // button1
             // 
+            this.button1.ForeColor = System.Drawing.Color.DarkRed;
             this.button1.Location = new System.Drawing.Point(27, 267);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(185, 23);
@@ -138,6 +149,7 @@
             // 
             // button2
             // 
+            this.button2.ForeColor = System.Drawing.Color.DarkRed;
             this.button2.Location = new System.Drawing.Point(27, 312);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(185, 23);
@@ -148,6 +160,7 @@
             // 
             // button3
             // 
+            this.button3.ForeColor = System.Drawing.Color.DarkRed;
             this.button3.Location = new System.Drawing.Point(27, 359);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(185, 23);
@@ -158,6 +171,7 @@
             // 
             // button4
             // 
+            this.button4.ForeColor = System.Drawing.Color.DarkRed;
             this.button4.Location = new System.Drawing.Point(27, 405);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(185, 23);
@@ -196,8 +210,9 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "Match";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

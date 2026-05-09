@@ -128,5 +128,10 @@ namespace AMS_Database_Project
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
