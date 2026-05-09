@@ -174,7 +174,7 @@
             // button3
             // 
             this.button3.ForeColor = System.Drawing.Color.DarkRed;
-            this.button3.Location = new System.Drawing.Point(763, 353);
+            this.button3.Location = new System.Drawing.Point(802, 375);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(123, 39);
             this.button3.TabIndex = 13;
@@ -311,11 +311,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(898, 404);
-=======
-            this.ClientSize = new System.Drawing.Size(824, 382);
->>>>>>> 263214677437af83eb65403990c548a556852f75
+            this.ClientSize = new System.Drawing.Size(937, 426);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
