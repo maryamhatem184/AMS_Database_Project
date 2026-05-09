@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -346,7 +347,7 @@ namespace DBapplication
 
         public DataTable GetProducts()
         {
-            string query = "SELECT Merchandise_ID, Name, Price, Stock FROM Merchandise_Item;";
+            string query = "SELECT Name, Price, Stock FROM Merchandise_Item;";
             return dbMan.ExecuteReader(query);
         }
 
@@ -440,6 +441,31 @@ namespace DBapplication
         public int AssignCoachToTeam(int CoachID, int TeamID)
         {
             string query = "UPDATE Team SET Coach_ID = " + CoachID + " WHERE Team_ID = " + TeamID;
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int AddNewInventoryItem(string itemName, decimal price, int stock)
+        {
+            string query = "INSERT INTO Merchandise_Item (Name, Stock, Price) VALUES ('" + itemName + "', " + stock + ", " + price + ");";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable GetAllPlayersNames()
+        {
+            string query = "SELECT Name FROM Player";
+            return dbMan.ExecuteReader(query);
+        }
+        public int SignPlayer(string PlayerName, int age, string Position)
+        {
+            string query = "INSERT INTO Player (Name, Age, Position) VALUES ('" + PlayerName + "', " + age + ", '" + Position + "')";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int SackPlayer(string PlayerName)
+        {
+            string query = "DELETE FROM Player WHERE Name = '" + PlayerName + "'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int AssignPlayerToTeam(int PlayerID, int TeamID)
+        {
+            string query = "UPDATE Player SET Team_ID = " + TeamID + " WHERE Player_ID = " + PlayerID;
             return dbMan.ExecuteNonQuery(query);
         }
     }

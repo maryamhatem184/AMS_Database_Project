@@ -92,5 +92,17 @@ namespace AMS_Database_Project
             Generate_Reports generate_Reports = new Generate_Reports(managerID);
             generate_Reports.Show();
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Add_New_Inventory add_New_Inventory = new Add_New_Inventory(managerID);
+            add_New_Inventory.Show();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Manage_Contracts manage_Contracts = new Manage_Contracts(managerID);
+            manage_Contracts.Show();
+        }
     }
 }

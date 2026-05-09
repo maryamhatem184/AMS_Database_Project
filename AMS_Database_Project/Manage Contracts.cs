@@ -8,33 +8,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AMS_Database_Project
 {
-    public partial class Manage_Team : Form
+    public partial class Manage_Contracts : Form
     {
-        public Manage_Team(int ID)
+        public Manage_Contracts(int ID)
         {
             InitializeComponent();
             Controller controller = new Controller();
-            DataTable dt = controller.GetAllCoachNames();
+            DataTable dt = controller.GetAllPlayersNames();
             foreach (DataRow dr in dt.Rows)
             {
                 comboBox4.Items.Add(dr["Name"].ToString());
+                comboBox2.Items.Add(dr["Name"].ToString());
             }
             dt = controller.GetAllTeamsNames();
             foreach (DataRow dr in dt.Rows)
             {
                 comboBox3.Items.Add(dr["Name"].ToString());
-                comboBox2.Items.Add(dr["Name"].ToString());
-            }
-            dt = controller.GetAllSportsSectionNames();
-            foreach (DataRow dr in dt.Rows)
-            {
-                comboBox1.Items.Add(dr["Name"].ToString());
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -49,34 +44,28 @@ namespace AMS_Database_Project
             label12.Visible = false;
             label7.Visible = false;
             Controller controller = new Controller();
-            if (textBox1.Text != "" && comboBox1.Text != "" && textBox2.Text != "")
+            if (textBox1.Text != "" && textBox3.Text != "" && textBox2.Text != "")
             {
-                controller.RegisterTeam(textBox1.Text, textBox2.Text, comboBox1.Text);
-                comboBox1.Items.Clear();
+                controller.SignPlayer(textBox1.Text, Convert.ToInt32(textBox2.Text), textBox3.Text);
                 comboBox2.Items.Clear();
                 comboBox3.Items.Clear();
                 comboBox4.Items.Clear();
-                comboBox1.Text = "";
+                textBox3.Text = "";
                 comboBox2.Text = "";
                 comboBox3.Text = "";
                 comboBox4.Text = "";
                 textBox1.Text = "";
                 textBox2.Text = "";
-                DataTable dt = controller.GetAllSportsSectionNames();
+                DataTable dt = controller.GetAllPlayersNames();
                 foreach (DataRow dr in dt.Rows)
                 {
-                    comboBox1.Items.Add(dr["Name"].ToString());
+                    comboBox4.Items.Add(dr["Name"].ToString());
+                    comboBox2.Items.Add(dr["Name"].ToString());
                 }
                 dt = controller.GetAllTeamsNames();
                 foreach (DataRow dr in dt.Rows)
                 {
                     comboBox3.Items.Add(dr["Name"].ToString());
-                    comboBox2.Items.Add(dr["Name"].ToString());
-                }
-                dt = controller.GetAllCoachNames();
-                foreach (DataRow dr in dt.Rows)
-                {
-                    comboBox4.Items.Add(dr["Name"].ToString());
                 }
                 label9.Visible = true;
             }
@@ -97,32 +86,26 @@ namespace AMS_Database_Project
             Controller controller = new Controller();
             if (comboBox2.Text != "")
             {
-                controller.DeactivateTeam(comboBox2.Text);
-                comboBox1.Items.Clear();
+                controller.SackPlayer(comboBox2.Text);
                 comboBox2.Items.Clear();
                 comboBox3.Items.Clear();
                 comboBox4.Items.Clear();
-                comboBox1.Text = "";
+                textBox3.Text = "";
                 comboBox2.Text = "";
                 comboBox3.Text = "";
                 comboBox4.Text = "";
                 textBox1.Text = "";
                 textBox2.Text = "";
-                DataTable dt = controller.GetAllSportsSectionNames();
+                DataTable dt = controller.GetAllPlayersNames();
                 foreach (DataRow dr in dt.Rows)
                 {
-                    comboBox1.Items.Add(dr["Name"].ToString());
+                    comboBox4.Items.Add(dr["Name"].ToString());
+                    comboBox2.Items.Add(dr["Name"].ToString());
                 }
                 dt = controller.GetAllTeamsNames();
                 foreach (DataRow dr in dt.Rows)
                 {
                     comboBox3.Items.Add(dr["Name"].ToString());
-                    comboBox2.Items.Add(dr["Name"].ToString());
-                }
-                dt = controller.GetAllCoachNames();
-                foreach (DataRow dr in dt.Rows)
-                {
-                    comboBox4.Items.Add(dr["Name"].ToString());
                 }
                 label11.Visible = true;
             }
@@ -147,34 +130,40 @@ namespace AMS_Database_Project
             else
             {
                 Controller controller = new Controller();
-                controller.AssignCoachToTeam(controller.GetPlayerID(comboBox4.Text), controller.GetTeamIDByName(comboBox3.Text));
-                comboBox1.Items.Clear();
+                controller.AssignPlayerToTeam(controller.GetPlayerID(comboBox4.Text), controller.GetTeamID(comboBox3.Text));
                 comboBox2.Items.Clear();
                 comboBox3.Items.Clear();
                 comboBox4.Items.Clear();
-                comboBox1.Text = "";
+                textBox3.Text = "";
                 comboBox2.Text = "";
                 comboBox3.Text = "";
                 comboBox4.Text = "";
                 textBox1.Text = "";
                 textBox2.Text = "";
-                DataTable dt = controller.GetAllSportsSectionNames();
+                DataTable dt = controller.GetAllPlayersNames();
                 foreach (DataRow dr in dt.Rows)
                 {
-                    comboBox1.Items.Add(dr["Name"].ToString());
+                    comboBox4.Items.Add(dr["Name"].ToString());
+                    comboBox2.Items.Add(dr["Name"].ToString());
                 }
                 dt = controller.GetAllTeamsNames();
                 foreach (DataRow dr in dt.Rows)
                 {
                     comboBox3.Items.Add(dr["Name"].ToString());
-                    comboBox2.Items.Add(dr["Name"].ToString());
-                }
-                dt = controller.GetAllCoachNames();
-                foreach (DataRow dr in dt.Rows)
-                {
-                    comboBox4.Items.Add(dr["Name"].ToString());
                 }
                 label12.Visible = true;
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }
