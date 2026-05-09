@@ -55,34 +55,42 @@ namespace AMS_Database_Project
         private void button4_Click_1(object sender, EventArgs e)
         {
             ShowStatFromSP("Total Revenue", "TotalRevenue");
+            dataGridView1.DataSource = Controller.GetAllTransactions();
         }
         private void button5_Click_1(object sender, EventArgs e)
         {
             ShowStatFromSP("Average Transaction", "AvgTransactionValue");
+            dataGridView1.DataSource = Controller.GetAllTransactions();
         }
         private void button6_Click_1(object sender, EventArgs e)
         {
             ShowStatFromSP("Most Expensive", "MostExpensiveItem");
+            dataGridView1.DataSource = Controller.GetMostExpensiveItem();
         }
         private void button7_Click_1(object sender, EventArgs e)
         {
             ShowStatFromSP("Cheapest Item", "CheapestItem");
+            dataGridView1.DataSource = Controller.GetLeastExpensiveItem();
         }
         private void button8_Click_1(object sender, EventArgs e)
         {
             ShowStatFromSP("Total Stock", "TotalItemsInStock");
+            dataGridView1.DataSource = Controller.GetProducts();
         }
         private void button9_Click_1(object sender, EventArgs e)
         {
             ShowStatFromSP("Total Fans", "TotalRegisteredFans");
+            dataGridView1.DataSource = Controller.GetAllFansInfo();
         }
         private void button10_Click_1(object sender, EventArgs e)
         {
             ShowStatFromSP("Total Matches", "TotalMatchesScheduled");
+            dataGridView1.DataSource = Controller.GetAllMatchesInfo();
         }
         private void button11_Click_1(object sender, EventArgs e)
         {
             ShowStatFromSP("Total Bookings", "TotalTicketsBooked");
+            dataGridView1.DataSource = Controller.GetAllBookingsInfo();
         }
     }
 }

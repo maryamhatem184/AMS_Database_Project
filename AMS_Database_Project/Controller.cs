@@ -468,5 +468,51 @@ namespace DBapplication
             string query = "UPDATE Player SET Team_ID = " + TeamID + " WHERE Player_ID = " + PlayerID;
             return dbMan.ExecuteNonQuery(query);
         }
+        public int GetDoctorIDByName(string DoctorName)
+        {
+            string query = "SELECT Medical_ID FROM Medical_Staff WHERE Name = '" + DoctorName + "'";
+            object result = dbMan.ExecuteScalar(query);
+            if (result != null && result != DBNull.Value)
+                return Convert.ToInt32(result);
+            else
+                return -1;
+        }
+        public int AssignDoctorToPlayer(int DoctorID, int PlayerID)
+        {
+            string query = "UPDATE Player SET Medical_ID = " + DoctorID + " WHERE Player_ID = " + PlayerID;
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable GetAllTransactions()
+        {
+            string query = @"SELECT T.Transaction_ID, F.Name AS Fan_Name, T.Date, T.Total_Amount 
+                             FROM Transaction_Header T 
+                             JOIN Fan F ON T.Fan_ID = F.Fan_ID;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable GetMostExpensiveItem()
+        {
+            string query = @"SELECT TOP 1 Name, Price FROM Merchandise_Item ORDER BY Price DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable GetLeastExpensiveItem()
+        {
+            string query = @"SELECT TOP 1 Name, Price FROM Merchandise_Item ORDER BY Price ASC;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable GetAllFansInfo()
+        {
+            string query = "SELECT Name, Email, Phone, National_ID FROM Fan;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable GetAllMatchesInfo()
+        {
+            string query = "SELECT \r\n    T.Name AS [Home Team],\r\n    M.Opponent AS [Away Opponent],\r\n    M.Date AS [Match Date],\r\n    M.Time AS [Kickoff Time],\r\n    B.Name AS [Stadium / Branch Location]\r\nFROM [Match] M\r\nINNER JOIN Branch B ON M.Branch_ID = B.Branch_ID\r\nINNER JOIN plays P ON M.Match_ID = P.Match_ID\r\nINNER JOIN Team T ON P.Team_ID = T.Team_ID;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable GetAllBookingsInfo()
+        {
+            string query = "SELECT \r\n    f.Name AS [Fan Name],\r\n    CONCAT(t.Name, ' vs ', m.Opponent, ' (', m.Date, ')') AS [Match Description],\r\n    b.Ticket_Type AS [Ticket Type],\r\n    b.Booking_Date AS [Date of Purchase]\r\nFROM Booking b\r\nJOIN Fan f ON b.Fan_ID = f.Fan_ID\r\nJOIN [Match] m ON b.Match_ID = m.Match_ID\r\nJOIN plays p ON m.Match_ID = p.Match_ID\r\nJOIN Team t ON p.Team_ID = t.Team_ID\r\nORDER BY m.Date DESC;";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }

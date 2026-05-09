@@ -94,18 +94,18 @@
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.Green;
-            this.label15.Location = new System.Drawing.Point(403, 171);
+            this.label15.Location = new System.Drawing.Point(406, 171);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(179, 16);
+            this.label15.Size = new System.Drawing.Size(182, 16);
             this.label15.TabIndex = 123;
-            this.label15.Text = "Manage Deleted Succesfully";
+            this.label15.Text = "Manager Sacked Succesfully";
             this.label15.Visible = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Green;
-            this.label8.Location = new System.Drawing.Point(126, 171);
+            this.label8.Location = new System.Drawing.Point(125, 171);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(147, 16);
             this.label8.TabIndex = 122;
@@ -130,7 +130,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 33);
             this.button3.TabIndex = 120;
-            this.button3.Text = "Deactivate";
+            this.button3.Text = "Sack";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -141,7 +141,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 33);
             this.button1.TabIndex = 119;
-            this.button1.Text = "Register";
+            this.button1.Text = "Sign";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -191,9 +191,9 @@
             this.label3.ForeColor = System.Drawing.Color.DarkRed;
             this.label3.Location = new System.Drawing.Point(355, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 16);
+            this.label3.Size = new System.Drawing.Size(98, 16);
             this.label3.TabIndex = 114;
-            this.label3.Text = "Deactivate Manager:";
+            this.label3.Text = "Sack Manager:";
             // 
             // label1
             // 
@@ -201,9 +201,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
             this.label1.Location = new System.Drawing.Point(30, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 16);
+            this.label1.Size = new System.Drawing.Size(94, 16);
             this.label1.TabIndex = 113;
-            this.label1.Text = "Register Manager:";
+            this.label1.Text = "Sign Manager:";
             // 
             // label5
             // 

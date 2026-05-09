@@ -86,18 +86,18 @@
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.Green;
-            this.label15.Location = new System.Drawing.Point(355, 172);
+            this.label15.Location = new System.Drawing.Point(356, 172);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(168, 16);
+            this.label15.Size = new System.Drawing.Size(167, 16);
             this.label15.TabIndex = 108;
-            this.label15.Text = "Coach Deleted Succesfully";
+            this.label15.Text = "Coach Sacked Succesfully";
             this.label15.Visible = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Green;
-            this.label8.Location = new System.Drawing.Point(122, 172);
+            this.label8.Location = new System.Drawing.Point(113, 172);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(147, 16);
             this.label8.TabIndex = 107;
@@ -122,7 +122,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 33);
             this.button3.TabIndex = 105;
-            this.button3.Text = "Deactivate";
+            this.button3.Text = "Sack";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -133,7 +133,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 33);
             this.button1.TabIndex = 104;
-            this.button1.Text = "Register";
+            this.button1.Text = "Sign";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -183,9 +183,9 @@
             this.label3.ForeColor = System.Drawing.Color.DarkRed;
             this.label3.Location = new System.Drawing.Point(356, 33);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 16);
+            this.label3.Size = new System.Drawing.Size(83, 16);
             this.label3.TabIndex = 99;
-            this.label3.Text = "Deactivate Coach:";
+            this.label3.Text = "Sack Coach:";
             // 
             // label1
             // 
@@ -193,9 +193,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
             this.label1.Location = new System.Drawing.Point(12, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 16);
+            this.label1.Size = new System.Drawing.Size(79, 16);
             this.label1.TabIndex = 98;
-            this.label1.Text = "Register Coach:";
+            this.label1.Text = "Sign Coach:";
             // 
             // Register_Deactivate_Coach
             // 

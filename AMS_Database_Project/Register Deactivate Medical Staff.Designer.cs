@@ -43,6 +43,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox2
@@ -66,7 +74,7 @@
             // button4
             // 
             this.button4.ForeColor = System.Drawing.Color.DarkRed;
-            this.button4.Location = new System.Drawing.Point(567, 266);
+            this.button4.Location = new System.Drawing.Point(845, 266);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 33);
             this.button4.TabIndex = 94;
@@ -197,11 +205,100 @@
             this.textBox1.Size = new System.Drawing.Size(200, 22);
             this.textBox1.TabIndex = 97;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.Green;
+            this.label12.Location = new System.Drawing.Point(707, 185);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(145, 16);
+            this.label12.TabIndex = 176;
+            this.label12.Text = "Assignment Successful";
+            this.label12.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Maroon;
+            this.label5.Location = new System.Drawing.Point(718, 185);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 16);
+            this.label5.TabIndex = 175;
+            this.label5.Text = "Please Fill All Data";
+            this.label5.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.Color.DarkRed;
+            this.button2.Location = new System.Drawing.Point(740, 215);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(97, 33);
+            this.button2.TabIndex = 174;
+            this.button2.Text = "Assign";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.ForeColor = System.Drawing.Color.DarkRed;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(788, 132);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(138, 24);
+            this.comboBox3.TabIndex = 173;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.DarkRed;
+            this.label6.Location = new System.Drawing.Point(677, 135);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(99, 16);
+            this.label6.TabIndex = 172;
+            this.label6.Text = "Select Medical:";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.ForeColor = System.Drawing.Color.DarkRed;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(788, 91);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(138, 24);
+            this.comboBox4.TabIndex = 171;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.DarkRed;
+            this.label14.Location = new System.Drawing.Point(677, 94);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(90, 16);
+            this.label14.TabIndex = 170;
+            this.label14.Text = "Select Player:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.DarkRed;
+            this.label9.Location = new System.Drawing.Point(677, 39);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(150, 16);
+            this.label9.TabIndex = 169;
+            this.label9.Text = "Assign Player to Doctor:";
+            // 
             // Register_Deactivate_Medical_Staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 311);
+            this.ClientSize = new System.Drawing.Size(954, 311);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
@@ -242,5 +339,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label9;
     }
 }
