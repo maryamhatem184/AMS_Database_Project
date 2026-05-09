@@ -419,6 +419,28 @@ namespace DBapplication
             string query = $"UPDATE Merchandise_Item SET Stock = Stock - {quantity} WHERE Merchandise_ID = {merchandiseID};";
             dbMan.ExecuteNonQuery(query);
         }
-
+        public DataTable GetCoachIDByName(string CoachName)
+        {
+            string query = "SELECT Coach_ID FROM Coach WHERE Name = '" + CoachName + "'";
+            object result = dbMan.ExecuteScalar(query);
+            if (result != null && result != DBNull.Value)
+                return dbMan.ExecuteReader("SELECT * FROM Coach WHERE Coach_ID = " + Convert.ToInt32(result));
+            else
+                return null;
+        }
+        public DataTable GetTeamIDByName(string TeamName)
+        {
+            string query = "SELECT Team_ID FROM Team WHERE Name = '" + TeamName + "'";
+            object result = dbMan.ExecuteScalar(query);
+            if (result != null && result != DBNull.Value)
+                return dbMan.ExecuteReader("SELECT * FROM Team WHERE Team_ID = " + Convert.ToInt32(result));
+            else
+                return null;
+        }
+        public int AssignCoachToTeam(int CoachID, int TeamID)
+        {
+            string query = "UPDATE Team SET Coach_ID = " + CoachID + " WHERE Team_ID = " + TeamID;
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
 }
