@@ -17,7 +17,7 @@ namespace AMS_Database_Project
         {
             InitializeComponent();
             Controller controller = new Controller();
-            DataTable dt = controller.GetAllSportsSectionNames();
+            DataTable dt = controller.GetAllCoachNames();
             foreach (DataRow dr in dt.Rows)
             {
                 comboBox1.Items.Add(dr["Name"].ToString());
@@ -95,6 +95,46 @@ namespace AMS_Database_Project
             else
             {
                 label10.Visible = true;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            label7.Visible = false;
+            label8.Visible = false;
+            label15.Visible = false;
+            label13.Visible = false;
+            label11.Visible = false;
+            label12.Visible = false;
+            if (comboBox3.Text == "" || comboBox1.Text == "")
+            {
+                label11.Visible = true;
+            }
+            else
+            {
+                Controller controller = new Controller();
+                controller.AssignCoachToTeam(controller.GetCoachIDByName(comboBox1.Text), controller.GetTeamIDByName(comboBox3.Text));
+                comboBox2.Items.Clear();
+                comboBox3.Items.Clear();
+                comboBox1.Items.Clear();
+                comboBox3.Text = "";
+                comboBox1.Text = "";
+                comboBox2.Text = "";
+                textBox1.Text = "";
+                textBox2.Text = "";
+                DataTable dt = controller.GetAllCoachNames();
+                comboBox2.Items.Clear();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    comboBox2.Items.Add(dr["Name"].ToString());
+                    comboBox1.Items.Add(dr["Name"].ToString());
+                }
+                dt = controller.GetAllTeamNames(0);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    comboBox3.Items.Add(dr["Name"].ToString());
+                }
+                label12.Visible = true;
             }
         }
     }
