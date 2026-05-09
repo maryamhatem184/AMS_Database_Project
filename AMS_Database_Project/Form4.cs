@@ -7,44 +7,46 @@ namespace AMS_Database_Project
     public partial class Form4 : Form
     {
         BookingController bookingController = new BookingController();
-
-        public Form4(int fanID)
+        private int fanID;
+        public Form4(int ID)
         {
             InitializeComponent();
+            fanID = ID;
         }
 
         private void LoadBookings()
         {
-            dataGridView1.DataSource = bookingController.GetBookings();
+           
+                 
+                dataGridView1.DataSource = bookingController.GetBookingsByFan(fanID);
+            
         }
- 
-      
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                textBox1.Text =
-                    dataGridView1.Rows[e.RowIndex].Cells["Booking_ID"].Value.ToString();
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
-                textBox2.Text =
-                    dataGridView1.Rows[e.RowIndex].Cells["Fan_ID"].Value.ToString();
+                 
+                textBox1.Text = row.Cells[0].Value.ToString();
 
-                textBox3.Text =
-                    dataGridView1.Rows[e.RowIndex].Cells["Match_ID"].Value.ToString();
-
-                textBox4.Text =
-                    dataGridView1.Rows[e.RowIndex].Cells["Ticket_Type"].Value.ToString();
+          
+                textBox3.Text = row.Cells["Match_ID"].Value.ToString();
+                textBox4.Text = row.Cells["Ticket_Type"].Value.ToString();
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+        { 
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            textBox2.Text = fanID.ToString();
+            textBox2.ReadOnly = true;
 
+            LoadBookings();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -52,14 +54,12 @@ namespace AMS_Database_Project
             try
             {
                 bookingController.BookTicket(
-                    int.Parse(textBox1.Text),
-                    int.Parse(textBox2.Text),
-                    int.Parse(textBox3.Text),
-                    textBox4.Text
-                );
+                       fanID,                      
+                       int.Parse(textBox3.Text),   
+                      textBox4.Text              
+                                            );
 
                 MessageBox.Show("Ticket booked successfully");
-
                 LoadBookings();
             }
             catch (Exception ex)
@@ -96,22 +96,27 @@ namespace AMS_Database_Project
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void button3_Click_1(object sender, EventArgs e)
         {
             try
             {
-                bookingController.DeleteBooking(
-                    int.Parse(textBox1.Text)
-                );
+              
+                if (string.IsNullOrEmpty(textBox1.Text))
+                {
+                    MessageBox.Show("يا ريت تختاري الحجز من الجدول الأول (دوس كليك على السطر)");
+                    return;
+                }
+
+                int bookingId = int.Parse(textBox1.Text);
+                bookingController.DeleteBooking(bookingId);
 
                 MessageBox.Show("Booking deleted successfully");
-
-                LoadBookings();
+                LoadBookings();  
+                textBox1.Clear();  
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("فيه غلطة حصلت: " + ex.Message);
             }
         }
 
@@ -119,7 +124,7 @@ namespace AMS_Database_Project
         {
             try
             {
-                LoadBookings();
+                LoadBookings(); 
             }
             catch (Exception ex)
             {

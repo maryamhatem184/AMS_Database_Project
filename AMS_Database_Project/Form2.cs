@@ -8,40 +8,27 @@ namespace AMS_Database_Project
     public partial class MembershipForm : Form
     {
         MembershipController membershipController = new MembershipController();
-
-        public MembershipForm(int fanID)
+        private int fanID;
+        public MembershipForm(int ID)
         {
             InitializeComponent();
+            fanID = ID;
         }
 
         private void LoadMemberships()
         {
-            DataTable dt = membershipController.GetMemberships();
-            dataGridView1.DataSource = dt;
-        }
-
-        // ADD
-        private void button1_Click(object sender, EventArgs e)
-        {
             try
             {
-                membershipController.AddMembership(
-                    int.Parse(textBox1.Text),
-                int.Parse(textBox2.Text),
-                    textBox3.Text,
-                    DateTime.Parse(textBox4.Text),
-                    DateTime.Parse(textBox5.Text)
-                );
-
-                MessageBox.Show("Membership added successfully");
-                LoadMemberships();
+                DataTable dt = membershipController.GetMembershipsByFan(this.fanID);
+                dataGridView1.DataSource = dt;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error loading data: " + ex.Message);
             }
         }
-
+ 
+       
       
        
         
@@ -74,16 +61,23 @@ namespace AMS_Database_Project
         {
             try
             {
-                membershipController.DeleteMembership(
-                    int.Parse(textBox1.Text)
-                );
+                if (string.IsNullOrEmpty(textBox1.Text))
+                {
+                    MessageBox.Show("Please select a membership to delete.");
+                    return;
+                }
 
-                MessageBox.Show("Membership deleted successfully");
-                LoadMemberships();
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this membership?", "Confirm", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    membershipController.DeleteMembership(int.Parse(textBox1.Text));
+                    MessageBox.Show("Membership deleted successfully!");
+                    LoadMemberships();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Delete Error: " + ex.Message);
             }
         }
 
@@ -91,56 +85,54 @@ namespace AMS_Database_Project
         {
             try
             {
+                
+                if (string.IsNullOrEmpty(textBox1.Text))
+                {
+                    MessageBox.Show("Please select a membership from the table first!");
+                    return;
+                }
+
                 int membershipId = int.Parse(textBox1.Text);
 
-                DataTable dt = membershipController.GetMemberships();
+                
+                DateTime start = string.IsNullOrEmpty(textBox4.Text)
+                                 ? Convert.ToDateTime(dataGridView1.CurrentRow.Cells["Start_Date"].Value)
+                                 : DateTime.Parse(textBox4.Text);
 
-                DataRow[] rows = dt.Select("Membership_ID = " + membershipId);
+                DateTime expiry = string.IsNullOrEmpty(textBox5.Text)
+                                  ? Convert.ToDateTime(dataGridView1.CurrentRow.Cells["Expiry_Date"].Value)
+                                  : DateTime.Parse(textBox5.Text);
 
-                if (rows.Length > 0)
-                {
-                    int fanId = textBox2.Text == ""
-                        ? Convert.ToInt32(rows[0]["Fan_ID"])
-                        : int.Parse(textBox2.Text);
+                 
+                string membershipType = string.IsNullOrEmpty(textBox3.Text)
+                                        ? dataGridView1.CurrentRow.Cells["Type"].Value.ToString()
+                                        : textBox3.Text;
 
-                    string type = textBox3.Text == ""
-                        ? rows[0]["Type"].ToString()
-                        : textBox3.Text;
+                
+                membershipController.UpdateMembership(
+                    membershipId,
+                    this.fanID,
+                    membershipType,
+                    start,
+                    expiry
+                );
 
-                    DateTime startDate = textBox4.Text == ""
-                        ? Convert.ToDateTime(rows[0]["Start_Date"])
-                        : DateTime.Parse(textBox4.Text);
+                MessageBox.Show("Membership Updated Successfully!");
 
-                    DateTime expiryDate = textBox5.Text == ""
-                        ? Convert.ToDateTime(rows[0]["Expiry_Date"])
-                        : DateTime.Parse(textBox5.Text);
-
-                    membershipController.UpdateMembership(
-                        membershipId,
-                        fanId,
-                        type,
-                        startDate,
-                        expiryDate
-                    );
-
-                    MessageBox.Show("Membership updated successfully");
-
-                    LoadMemberships();
-                }
-                else
-                {
-                    MessageBox.Show("Membership not found");
-                }
+                LoadMemberships();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Update Error: " + ex.Message);
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void MembershipForm_Load(object sender, EventArgs e)
         {
-            this.Hide();
+            textBox2.Text = fanID.ToString();
+            textBox2.ReadOnly = true;
+
+            LoadMemberships();
         }
     }
 }

@@ -7,131 +7,104 @@ namespace AMS_Database_Project
     public partial class Form1 : Form
     {
         FanController fanController = new FanController();
+        private int fanID;
 
-        public Form1(int fanID)
+        public Form1(int ID)
         {
             InitializeComponent();
+            fanID = ID;    
         }
-
-        // Load Fans in Grid
+         
         private void LoadFans()
         {
-            DataTable dt = fanController.GetFans();
+             
+            DataTable dt = fanController.GetFanByID(fanID);
 
-            MessageBox.Show("Rows count = " + dt.Rows.Count);
+           
+            if (dt.Rows.Count > 0)
+            {
+                textBox1.Text = dt.Rows[0]["Fan_ID"].ToString();
+                textBox2.Text = dt.Rows[0]["Name"].ToString();
+                textBox3.Text = dt.Rows[0]["Email"].ToString();
+                textBox4.Text = dt.Rows[0]["Phone"].ToString();
+                textBox5.Text = dt.Rows[0]["National_ID"].ToString();
+            }
 
             dataGridView1.DataSource = dt;
-
         }
 
-        // ADD
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                fanController.AddFan(
-                    int.Parse(textBox1.Text),
-                    textBox2.Text,
-                    textBox3.Text,
-                    textBox4.Text,
-                    textBox5.Text
-                );
-
-                MessageBox.Show("Fan added successfully");
-
-                LoadFans();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-       
-        
-
-        // Fill TextBoxes when clicking row
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells["Fan_ID"].Value.ToString();
-                textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value.ToString();
-                textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells["Email"].Value.ToString();
-                textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells["Phone"].Value.ToString();
-                textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells["National_ID"].Value.ToString();
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                textBox1.Text = row.Cells["Fan_ID"].Value.ToString();
+                textBox2.Text = row.Cells["Name"].Value.ToString();
+                textBox3.Text = row.Cells["Email"].Value.ToString();
+                textBox4.Text = row.Cells["Phone"].Value.ToString();
+                textBox5.Text = row.Cells["National_ID"].Value.ToString();
             }
         }
 
-        // Required Empty Event
-        private void textBox1_TextChanged(object sender, EventArgs e)
+     
+        private void button4_Click_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void button4_Click_1(object sender, EventArgs e)//////////////
-        {
-            DataTable dt = fanController.GetFans();
-
-            MessageBox.Show("Rows count = " + dt.Rows.Count);
-
-            dataGridView1.DataSource = dt;
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            LoadFans();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             try
             {
+                 
                 fanController.UpdateFan(
-                    int.Parse(textBox1.Text),
+                    fanID,
                     textBox2.Text,
                     textBox3.Text,
                     textBox4.Text,
                     textBox5.Text
                 );
 
-                MessageBox.Show("Fan updated successfully");
-
+                MessageBox.Show("Your data has been updated successfully!");
                 LoadFans();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Update Error: " + ex.Message);
             }
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                fanController.DeleteFan(
-                    int.Parse(textBox1.Text)
-                );
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete your account?", "Confirm Delete", MessageBoxButtons.YesNo);
 
-                MessageBox.Show("Fan deleted successfully");
-
-                LoadFans();
-            }
-            catch (Exception ex)
+            if (dialogResult == DialogResult.Yes)
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    fanController.DeleteFan(fanID);
+                    MessageBox.Show("Account deleted successfully.");
+
+                   
+                    Login loginForm = new Login();
+                    loginForm.Show();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Delete Error: " + ex.Message);
+                }
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            textBox1.Text = fanID.ToString();
+            textBox1.ReadOnly = true;
+            LoadFans();  
         }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
+ 
+        private void textBox1_TextChanged(object sender, EventArgs e) { }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
     }
 }

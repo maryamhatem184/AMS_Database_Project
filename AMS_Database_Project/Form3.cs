@@ -8,7 +8,7 @@ namespace AMS_Database_Project
     {
         MatchController matchController = new MatchController();
 
-        public Form3(int fanID)
+        public Form3(int ID)
         {
             InitializeComponent();
         }
@@ -41,19 +41,12 @@ namespace AMS_Database_Project
         {
             if (e.RowIndex >= 0)
             {
-                textBox1.Text =
-                    dataGridView1.Rows[e.RowIndex].Cells["Match_ID"].Value.ToString();
-
-                textBox2.Text =
-                    Convert.ToDateTime(
-                        dataGridView1.Rows[e.RowIndex].Cells["Date"].Value
-                    ).ToString("yyyy-MM-dd");
-
-                textBox3.Text =
-                    dataGridView1.Rows[e.RowIndex].Cells["Time"].Value.ToString();
-
-                textBox4.Text =
-                    dataGridView1.Rows[e.RowIndex].Cells["Opponent"].Value.ToString();
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                textBox1.Text = row.Cells["Match_ID"].Value.ToString();
+                textBox2.Text = Convert.ToDateTime(row.Cells["Date"].Value).ToString("yyyy-MM-dd");
+                textBox3.Text = row.Cells["Time"].Value.ToString();
+                textBox4.Text = row.Cells["Opponent"].Value.ToString();
+                textBox5.Text = row.Cells["Branch_ID"].Value.ToString();
             }
         }
 
@@ -62,76 +55,38 @@ namespace AMS_Database_Project
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                matchController.AddMatch(
-                    int.Parse(textBox1.Text),
-                    DateTime.Parse(textBox2.Text),
-                    TimeSpan.Parse(textBox3.Text),
-                    textBox4.Text,
-                    int.Parse(textBox5.Text)
-                );
-
-                MessageBox.Show("Match added successfully");
-
-                LoadMatches();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+         
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             try
             {
+                if (string.IsNullOrEmpty(textBox1.Text)) return;
+
                 int matchId = int.Parse(textBox1.Text);
+                 
+                DateTime date = string.IsNullOrEmpty(textBox2.Text)
+                    ? Convert.ToDateTime(dataGridView1.CurrentRow.Cells["Date"].Value)
+                    : DateTime.Parse(textBox2.Text);
 
-                DataTable dt = matchController.GetMatches();
+                TimeSpan time = string.IsNullOrEmpty(textBox3.Text)
+                    ? TimeSpan.Parse(dataGridView1.CurrentRow.Cells["Time"].Value.ToString())
+                    : TimeSpan.Parse(textBox3.Text);
 
-                DataRow[] rows = dt.Select("Match_ID = " + matchId);
+                string opponent = string.IsNullOrEmpty(textBox4.Text)
+                    ? dataGridView1.CurrentRow.Cells["Opponent"].Value.ToString()
+                    : textBox4.Text;
 
-                if (rows.Length > 0)
-                {
-                    DateTime date = textBox2.Text == ""
-                        ? Convert.ToDateTime(rows[0]["Date"])
-                        : DateTime.Parse(textBox2.Text);
+                int branchId = string.IsNullOrEmpty(textBox5.Text)
+                    ? int.Parse(dataGridView1.CurrentRow.Cells["Branch_ID"].Value.ToString())
+                    : int.Parse(textBox5.Text);
 
-                    TimeSpan time = textBox3.Text == ""
-                        ? TimeSpan.Parse(rows[0]["Time"].ToString())
-                        : TimeSpan.Parse(textBox3.Text);
-
-                    string opponent = textBox4.Text == ""
-                        ? rows[0]["Opponent"].ToString()
-                        : textBox4.Text;
-
-                    int branchId = textBox5.Text == ""
-                        ? GetBranchIdByMatch(matchId)
-                        : int.Parse(textBox5.Text);
-
-                    matchController.UpdateMatch(
-                        matchId,
-                        date,
-                        time,
-                        opponent,
-                        branchId
-                    );
-
-                    MessageBox.Show("Match updated successfully");
-
-                    LoadMatches();
-                }
-                else
-                {
-                    MessageBox.Show("Match not found");
-                }
+                matchController.UpdateMatch(matchId, date, time, opponent, branchId);
+                MessageBox.Show("Match updated successfully");
+                LoadMatches();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+            catch (Exception ex) {
+                MessageBox.Show("Update Error: " + ex.Message);
             }
         }
 
@@ -139,17 +94,14 @@ namespace AMS_Database_Project
         {
             try
             {
-                matchController.DeleteMatch(
-                    int.Parse(textBox1.Text)
-                );
-
+                if (string.IsNullOrEmpty(textBox1.Text)) return;
+                matchController.DeleteMatch(int.Parse(textBox1.Text));
                 MessageBox.Show("Match deleted successfully");
-
                 LoadMatches();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message); 
             }
         }
 
@@ -163,6 +115,11 @@ namespace AMS_Database_Project
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            LoadMatches();
         }
     }
 }
