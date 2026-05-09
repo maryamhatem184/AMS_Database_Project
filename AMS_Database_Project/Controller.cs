@@ -343,5 +343,82 @@ namespace DBapplication
         {
             return dbMan.ExecuteReader("EXEC GetManagerialStats;");
         }
+
+        public DataTable GetProducts()
+        {
+            string query = "SELECT Merchandise_ID, Name, Price, Stock FROM Merchandise_Item;";
+            return dbMan.ExecuteReader(query);
+        }
+
+
+
+        public int AddProduct(string name, decimal price, int stock)
+        {
+
+            string idQuery = "SELECT ISNULL(MAX(Merchandise_ID), 0) + 1 FROM Merchandise_Item;";
+            int newId = Convert.ToInt32(dbMan.ExecuteScalar(idQuery));
+
+            string query = $"INSERT INTO Merchandise_Item (Merchandise_ID, Name, Price, Stock) VALUES ({newId}, '{name}', {price}, {stock});";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
+        public int UpdateStock(int merchandiseId, int newStock)
+        {
+            string query = $"UPDATE Merchandise_Item SET Stock = {newStock} WHERE Merchandise_ID = {merchandiseId};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int DeleteProduct(int merchandiseId)
+        {
+            string query = $"DELETE FROM Merchandise_Item WHERE Merchandise_ID = {merchandiseId};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
+
+        public DataTable GetFanNames()
+        {
+            string query = "SELECT Fan_ID, Name FROM Fan;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetProductNames()
+        {
+            string query = "SELECT Merchandise_ID, Name FROM Merchandise_Item WHERE Stock > 0;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public object GetProductPrice(string productName)
+        {
+            string query =
+                $"SELECT Price FROM Merchandise_Item WHERE Name = '{productName}';";
+
+            return dbMan.ExecuteScalar(query);
+        }
+
+        public int CreateTransaction(int fanID, decimal total)
+        {
+            string idQuery = "SELECT ISNULL(MAX(Transaction_ID), 0) + 1 FROM Transaction_Header;";
+            int newTxnId = Convert.ToInt32(dbMan.ExecuteScalar(idQuery));
+
+            string query = $"INSERT INTO Transaction_Header (Transaction_ID, Fan_ID, Date, Total_Amount) VALUES ({newTxnId}, {fanID}, GETDATE(), {total});";
+            dbMan.ExecuteNonQuery(query);
+
+            return newTxnId;
+        }
+
+        public void AddToTransaction(int transactionID, int merchandiseID, int quantity)
+        {
+            string query = $"INSERT INTO contain (Transaction_ID, Merchandise_ID, Quantity) VALUES ({transactionID}, {merchandiseID}, {quantity});";
+            dbMan.ExecuteNonQuery(query);
+        }
+
+        public void ReduceStock(int merchandiseID, int quantity)
+        {
+            string query = $"UPDATE Merchandise_Item SET Stock = Stock - {quantity} WHERE Merchandise_ID = {merchandiseID};";
+            dbMan.ExecuteNonQuery(query);
+        }
+
     }
 }

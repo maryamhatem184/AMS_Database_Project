@@ -53,8 +53,8 @@ namespace AMS_Database_Project
 
         private void button4_Click(object sender, EventArgs e)
         {
-            purchase purchase = new purchase(fanID);
-            purchase.Show();
+            purchase purchaseForm = new purchase(fanID);
+            purchaseForm.Show();
         }
     }
 }

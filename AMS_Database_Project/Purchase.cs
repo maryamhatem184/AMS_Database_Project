@@ -11,16 +11,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace DBproject
+namespace AMS_Database_Project
 {
     public partial class purchase : Form
     {
         Controller Controller = new Controller();
         decimal currentTotal = 0;
         DataTable cartTable;
-        public purchase()
+        private int fanID;
+        public purchase(int fanID)
         {
             InitializeComponent();
+            this.fanID = fanID;
             DataTable fans = Controller.GetFanNames();
             comboBox1.DataSource = fans;
             comboBox1.DisplayMember = "Name";

@@ -1,4 +1,4 @@
-﻿namespace DBproject
+﻿namespace AMS_Database_Project
 {
     partial class purchase
     {
@@ -86,7 +86,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(116, 44);
+            this.label1.Location = new System.Drawing.Point(120, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 16);
@@ -98,9 +98,9 @@
             this.button2.Location = new System.Drawing.Point(659, 199);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 28);
+            this.button2.Size = new System.Drawing.Size(133, 38);
             this.button2.TabIndex = 16;
-            this.button2.Text = "create transaction";
+            this.button2.Text = "Create Transaction";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -143,7 +143,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(215, 35);
+            this.comboBox1.Location = new System.Drawing.Point(242, 35);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 24);
@@ -165,6 +165,7 @@
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "purchase";
             this.Text = "Purchase From Merchandise";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
