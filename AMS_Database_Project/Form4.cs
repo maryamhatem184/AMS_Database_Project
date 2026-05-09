@@ -8,7 +8,7 @@ namespace AMS_Database_Project
     {
         BookingController bookingController = new BookingController();
 
-        public Form4()
+        public Form4(int fanID)
         {
             InitializeComponent();
         }

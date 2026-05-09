@@ -269,5 +269,20 @@ namespace DBapplication
             string query = "DELETE FROM System_Users WHERE UserID = (SELECT Coach_ID FROM Coach WHERE Name = '" + Name + "'); DELETE FROM Coach WHERE Name = '" + Name + "';";
             return dbMan.ExecuteNonQuery(query);
         }
+        public DataTable GetAllTeamsNames()
+        {
+            string query = "SELECT Name FROM Team";
+            return dbMan.ExecuteReader(query);
+        }
+        public int RegisterTeam(string Name, string Level, string SportName)
+        {
+            string query = "INSERT INTO Team (Name, Level, Sport_ID) VALUES ('Al Ahly " + Name + "', '" + Level + "', (SELECT Sport_ID FROM Sport WHERE Name = '" + SportName + "'))";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int DeactivateTeam(string Name)
+        {
+            string query = "DELETE FROM Team WHERE Name = '" + Name + "'";
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
 }

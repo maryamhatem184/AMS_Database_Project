@@ -35,25 +35,25 @@ namespace AMS_Database_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form4 form4 = new Form4();
+            Form4 form4 = new Form4(fanID);
             form4.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3();
+            Form3 form3 = new Form3(fanID);
             form3.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MembershipForm form2 = new MembershipForm();
+            MembershipForm form2 = new MembershipForm(fanID);
             form2.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form4 form4 = new Form4();
+            Form4 form4 = new Form4(fanID);
             form4.Show();
         }
     }

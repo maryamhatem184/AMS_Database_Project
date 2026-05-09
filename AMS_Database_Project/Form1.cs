@@ -8,7 +8,7 @@ namespace AMS_Database_Project
     {
         FanController fanController = new FanController();
 
-        public Form1()
+        public Form1(int fanID)
         {
             InitializeComponent();
         }

@@ -9,7 +9,7 @@ namespace AMS_Database_Project
     {
         MembershipController membershipController = new MembershipController();
 
-        public MembershipForm()
+        public MembershipForm(int fanID)
         {
             InitializeComponent();
         }
